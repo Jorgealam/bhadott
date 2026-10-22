@@ -1,0 +1,24 @@
+<!--{"title":"Blog BHADOTT | Devlogs, IA, apps e novidades","description":"Devlogs dos jogos, bastidores da AURA, apps offline e novidades do universo BHADOTT.","section":"portal","scripts":["/js/blog.js"]}-->
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Blog e novidades</span>
+        <h1>Diário de <span class="sun-text">bordo</span></h1>
+        <p>Devlogs, bastidores dos projetos e o que aprendemos pelo caminho.</p>
+      </div>
+    </section>
+    <section class="section tight">
+      <div class="container">
+        <div class="blog-tools">
+          <label class="search"><svg class="ico"><use href="/assets/icons.svg#search"/></svg><span class="sr-only">Buscar no blog</span>
+            <input type="search" id="blog-search" placeholder="Buscar artigos…" /></label>
+          <div class="filters" role="group" aria-label="Categorias">
+            <button class="filter active" data-filter="all">Todos</button>{{blog_categories}}
+          </div>
+        </div>
+        <div class="grid grid-3" id="posts">{{posts_cards}}</div>
+        <p class="empty-msg" id="no-posts" hidden>Nenhum artigo encontrado. Tente outra palavra.</p>
+      </div>
+    </section>
+    <section class="section tight">
+      <div class="container"><div class="cta reveal"><h2>Materiais gratuitos</h2><p>E-books, checklists e modelos para tirar sua ideia do papel.</p><a class="btn btn-primary magnetic" href="/recursos.html">Ver materiais</a></div></div>
+    </section>

@@ -1,0 +1,8 @@
+[
+  { "grupo": "Jogos e 3D", "itens": ["Godot 4", "GDScript", "Unreal Engine", "Unity", "Blender"] },
+  { "grupo": "Web e Front-end", "itens": ["HTML/CSS/JS", "React", "Vue 3", "Vite", "Tailwind CSS", "PWA"] },
+  { "grupo": "Apps e Desktop", "itens": ["Android", "iOS", "Electron", "Apps offline"] },
+  { "grupo": "Back-end e Nuvem", "itens": ["Node.js", "Python", "FastAPI", "Cloudflare Workers", "GitHub Actions"] },
+  { "grupo": "Inteligência Artificial", "itens": ["Gemini API", "Groq", "Ollama", "Cloudflare Workers AI", "Claude API"] },
+  { "grupo": "Ferramentas", "itens": ["Git e GitHub", "Figma", "Chart.js", "Lighthouse"] }
+]

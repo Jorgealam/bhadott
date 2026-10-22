@@ -1,0 +1,28 @@
+<!--{"title":"Materiais gratuitos | BHADOTT Academy","description":"E-books, checklists e modelos gratuitos sobre transformação digital, apps, jogos e IA.","section":"portal"}-->
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">BHADOTT Academy</span>
+        <h1>Materiais <span class="sun-text">gratuitos</span></h1>
+        <p>Escolha um material e receba no seu e-mail. Sem spam — você pode sair quando quiser.</p>
+      </div>
+    </section>
+    <section class="section tight">
+      <div class="container grid grid-2">{{recursos_cards}}</div>
+    </section>
+    <section class="section tight" id="receber">
+      <div class="container narrow">
+        <form class="form card" action="#" method="post" data-form="recurso" novalidate>
+          {{> honeypot}}
+          <h2>Receber material</h2>
+          <div class="field"><label for="r-material">Material *</label>
+            <select id="r-material" name="recurso" required><option value="">Selecione</option><option>Guia de Transformação Digital para Pequenos Negócios</option><option>Checklist: antes de contratar um app</option><option>Kit de Game Design de Bolso</option><option>Guia de IA para o dia a dia da empresa</option></select></div>
+          <div class="form-row">
+            <div class="field"><label for="r-nome">Nome *</label><input id="r-nome" name="nome" required minlength="2" maxlength="100" autocomplete="name" /></div>
+            <div class="field"><label for="r-email">E-mail *</label><input id="r-email" name="email" type="email" required autocomplete="email" /></div>
+          </div>
+          <label class="check"><input type="checkbox" name="consentimento" required /> <span>Aceito receber o material e novidades da BHADOTT por e-mail (<a href="/privacidade.html">privacidade</a>). *</span></label>
+          <button class="btn btn-primary" type="submit">Receber agora</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>

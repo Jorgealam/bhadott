@@ -1,0 +1,10 @@
+{
+  "name": "bhadott",
+  "private": true,
+  "description": "Portal BHADOTT — Games · AI · Creative Technology",
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "node build.mjs --dev && python -m http.server 8080 -d dist",
+    "test": "node build.mjs --dev && node tests/check.mjs"
+  }
+}

@@ -1,0 +1,57 @@
+<!-- WhatsApp -->
+  <a class="fab fab-whats" href="#" data-whatsapp aria-label="Conversar no WhatsApp" hidden>
+    <svg class="ico"><use href="/assets/icons.svg#whatsapp"/></svg>
+  </a>
+
+  <!-- Assistente Constelação -->
+  <button class="fab fab-chat" aria-controls="chat" aria-expanded="false" aria-label="Abrir assistente Constelação">
+    <svg class="ico"><use href="/assets/icons.svg#sparkles"/></svg>
+    <span class="fab-ping"></span>
+  </button>
+  <section class="chat" id="chat" role="dialog" aria-modal="false" aria-labelledby="chat-title" hidden>
+    <canvas class="chat-sky" aria-hidden="true"></canvas>
+    <header class="chat-head">
+      <img src="/assets/bha.svg" alt="" width="40" height="40" />
+      <div><h2 id="chat-title">Constelação</h2><p data-i18n="chat.sub">Bha, seu guia pelo universo BHADOTT</p></div>
+      <button class="chat-close" aria-label="Fechar assistente">×</button>
+    </header>
+    <div class="chat-log" aria-live="polite"></div>
+    <div class="chat-chips"></div>
+    <form class="chat-form">
+      <label class="sr-only" for="chat-input">Sua mensagem</label>
+      <input id="chat-input" autocomplete="off" maxlength="400" placeholder="Pergunte sobre jogos, apps, preços…" data-i18n-ph="chat.ph" />
+      <button class="btn btn-primary btn-sm" type="submit" aria-label="Enviar">➤</button>
+    </form>
+  </section>
+
+  <!-- Cookies (LGPD) -->
+  <div class="cookie" role="dialog" aria-labelledby="cookie-title" hidden>
+    <h2 id="cookie-title" data-i18n="cookie.title">Cookies e privacidade</h2>
+    <p data-i18n="cookie.text">Usamos cookies essenciais para o site funcionar e, só com sua permissão, cookies de análise (Google Analytics) para melhorar a experiência.</p>
+    <label class="check"><input type="checkbox" checked disabled /> <span data-i18n="cookie.essential">Essenciais (sempre ativos)</span></label>
+    <label class="check"><input type="checkbox" id="ck-analytics" /> <span data-i18n="cookie.analytics">Análise de uso</span></label>
+    <div class="cookie-actions">
+      <button class="btn btn-ghost btn-sm" data-cookie="reject" data-i18n="cookie.reject">Recusar</button>
+      <button class="btn btn-ghost btn-sm" data-cookie="save" data-i18n="cookie.save">Salvar escolhas</button>
+      <button class="btn btn-primary btn-sm" data-cookie="accept" data-i18n="cookie.accept">Aceitar todos</button>
+    </div>
+    <a href="/privacidade.html" data-i18n="footer.privacy">Privacidade e cookies</a>
+  </div>
+
+  <!-- Pop-up de saída -->
+  <dialog class="exit-modal" aria-labelledby="exit-title">
+    <button class="modal-close" aria-label="Fechar">×</button>
+    <img src="/assets/bha.svg" alt="" width="72" height="72" />
+    <h2 id="exit-title">Antes de ir… leve um guia grátis</h2>
+    <p>Receba o <strong>Guia de Transformação Digital para Pequenos Negócios</strong> no seu e-mail.</p>
+    <form class="form" action="#" method="post" data-form="ebook" novalidate>
+      {{> honeypot}}
+      <div class="field"><label for="exit-email">Seu melhor e-mail</label><input id="exit-email" name="email" type="email" required autocomplete="email" /></div>
+      <input type="hidden" name="recurso" value="Guia de Transformação Digital" />
+      <button class="btn btn-primary" type="submit">Quero o guia</button>
+      <p class="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </dialog>
+
+  <!-- Rastro do cursor -->
+  <canvas class="trail" aria-hidden="true"></canvas>

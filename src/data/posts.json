@@ -1,0 +1,64 @@
+[
+  {
+    "slug": "novo-portal-bhadott", "titulo": "Bem-vindo ao novo universo BHADOTT", "categoria": "Novidades", "data": "2026-10-22", "leitura": 3,
+    "resumo": "O portal BHADOTT ganhou nova casa: um sistema solar onde cada divisão é um planeta. Conheça a nova organização.",
+    "conteudo": [
+      "<p>A BHADOTT cresceu e passou a ter várias frentes: jogos, aplicativos, sistemas, inteligência artificial e produção 3D. Para organizar tudo isso, o novo portal foi pensado como um <strong>sistema solar</strong>.</p>",
+      "<h2>O Sol e os planetas</h2>",
+      "<p>A BHADOTT é o Sol: a marca-mãe. Cada divisão e serviço é um planeta em órbita. A primeira divisão, o <a href=\"/studio/\">BHADOTT Studio</a>, reúne o desenvolvimento de jogos, apps e sistemas.</p>",
+      "<h2>O que há de novo</h2>",
+      "<ul><li>Assistente <strong>Constelação</strong> para tirar dúvidas</li><li>Orçamento interativo</li><li>Blog com devlogs dos projetos</li><li>Site em português, inglês e espanhol</li></ul>",
+      "<p>Explore, clique nos planetas e conte para a gente o que achou.</p>"
+    ]
+  },
+  {
+    "slug": "devlog-fathomfield", "titulo": "Devlog: as 16 profundidades de FATHOMFIELD", "categoria": "Jogos", "data": "2026-10-15", "leitura": 6,
+    "resumo": "Como estamos gerando cavernas procedurais em 5 biomas no Godot 4 sem perder o controle do ritmo do jogo.",
+    "conteudo": [
+      "<p>FATHOMFIELD mistura fazenda, sobrevivência e exploração. De dia você cuida do vale; à noite, desce às cavernas.</p>",
+      "<h2>Geração procedural com intenção</h2>",
+      "<p>Cada uma das 16 profundidades é gerada na hora, mas segue regras de bioma, dificuldade e recompensa para que a descida tenha ritmo: respiros, tensão e descobertas.</p>",
+      "<h2>Cinco biomas e três chefes</h2>",
+      "<p>Os biomas mudam inimigos, recursos e trilha sonora. Três chefes marcam as viradas da jornada até a arena final e a forja do Coração do Campo.</p>",
+      "<p>Próximos passos: balanceamento da economia da fazenda e testes com jogadores.</p>"
+    ]
+  },
+  {
+    "slug": "aura-varios-provedores-de-ia", "titulo": "AURA: por que usar vários provedores de IA ao mesmo tempo", "categoria": "Inteligência Artificial", "data": "2026-10-08", "leitura": 5,
+    "resumo": "Cotas acabam, APIs caem. Veja como a AURA troca de provedor sozinha para nunca parar de responder.",
+    "conteudo": [
+      "<p>Depender de um único provedor de IA é arriscado: limites de uso, instabilidade e mudanças de preço acontecem.</p>",
+      "<h2>Ordem de uso definida por você</h2>",
+      "<p>Na AURA você define a ordem dos provedores para texto e para imagem. Ela só passa para o próximo por falta de cota, falha técnica, indisponibilidade ou chave recusada.</p>",
+      "<h2>O mesmo princípio para clientes</h2>",
+      "<p>Usamos essa arquitetura em projetos de <a href=\"/studio/servicos/ia-automacao.html\">IA e automação</a>: o assistente continua funcionando mesmo quando um serviço externo falha.</p>"
+    ]
+  },
+  {
+    "slug": "por-que-godot", "titulo": "Por que escolhemos o Godot para nossos jogos", "categoria": "Jogos", "data": "2026-09-24", "leitura": 4,
+    "resumo": "Motor aberto, leve e sem royalties: os motivos que fizeram do Godot 4 a base da divisão de jogos.",
+    "conteudo": [
+      "<p>Já trabalhamos com Unity, Unreal e Godot. Hoje os novos projetos nascem no <strong>Godot 4</strong>.</p>",
+      "<h2>Sem royalties</h2><p>O jogo é 100% do criador. Nenhuma taxa por venda ou instalação.</p>",
+      "<h2>Leve e rápido</h2><p>O editor abre em segundos e roda bem em máquinas modestas — ótimo para prototipar.</p>",
+      "<h2>Comunidade e código aberto</h2><p>Quando algo não existe, dá para entender o motor e resolver.</p>"
+    ]
+  },
+  {
+    "slug": "apps-offline-no-campo", "titulo": "Apps offline: tecnologia para quem trabalha longe do sinal", "categoria": "Aplicativos", "data": "2026-09-10", "leitura": 5,
+    "resumo": "No campo e em obras a internet falha. Como projetamos apps que funcionam 100% offline e não perdem dados.",
+    "conteudo": [
+      "<p>Muitos profissionais trabalham onde o sinal não chega: fazendas, poços, obras. Um app que exige internet simplesmente não serve.</p>",
+      "<h2>Dados primeiro no aparelho</h2><p>Tudo é salvo localmente e há rotina de backup. Relatórios em PDF são gerados no próprio celular.</p>",
+      "<h2>Exemplos reais</h2><p>O <a href=\"/studio/cases/app-servicos-de-pocos.html\">app para serviços de poços</a> e o <a href=\"/studio/cases/bhadott-agro.html\">BHADOTT Agro</a> seguem esse princípio.</p>"
+    ]
+  },
+  {
+    "slug": "como-funciona-um-projeto", "titulo": "Como funciona um projeto com a BHADOTT, passo a passo", "categoria": "Novidades", "data": "2026-08-28", "leitura": 4,
+    "resumo": "Do primeiro contato à entrega: requisitos, proposta, construção com testes e entrega com versão identificada.",
+    "conteudo": [
+      "<ol><li><strong>Entender a rotina</strong> e registrar requisitos e critérios de aceite.</li><li><strong>Proposta</strong> com entregas, exclusões, prazo e modalidade de contratação.</li><li><strong>Construção e testes</strong> conforme o escopo aprovado, registrando alterações.</li><li><strong>Entrega</strong> de versão identificada, orientações e suporte contratado.</li></ol>",
+      "<p>Mudanças de escopo são registradas com o impacto em preço e prazo, e só seguem com o aceite das duas partes. Simule seu projeto no <a href=\"/studio/orcamento.html\">orçamento interativo</a>.</p>"
+    ]
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "slug": "jogos", "nome": "Desenvolvimento de Jogos", "icone": "gamepad", "planeta": "marte",
+    "resumo": "Jogos 2D e 3D em Godot, do protótipo jogável ao lançamento, com arte e mundo próprios.",
+    "intro": "Criamos jogos completos ou protótipos para validar uma ideia: mecânicas, mundo, arte 3D no Blender e publicação para PC, web e mobile.",
+    "entregas": ["Protótipo jogável (vertical slice)", "Game design e documentação", "Arte 3D e ambientes no Blender", "Publicação em PC, web ou mobile", "Jogos educativos e gamificação para empresas"],
+    "beneficios": [["Validação rápida", "Um protótipo jogável em poucas semanas mostra se a ideia diverte antes de investir pesado."], ["Motor aberto", "Godot é livre de royalties: o jogo é seu, sem taxas por venda."], ["Experiência real", "Vários projetos próprios em andamento, como FATHOMFIELD e BHADOTT Survival 3D."]]
+  },
+  {
+    "slug": "aplicativos", "nome": "Aplicativos", "icone": "phone", "planeta": "terra",
+    "resumo": "Apps para Android, iOS e desktop — inclusive apps que funcionam sem internet.",
+    "intro": "Do app de agendamento ao sistema de campo que funciona offline: interfaces simples, dados seguros e publicação nas lojas.",
+    "entregas": ["Apps Android e iOS", "Apps desktop (Windows) com Electron", "Funcionamento offline e backups", "Relatórios em PDF", "Publicação nas lojas"],
+    "beneficios": [["Funciona no campo", "Apps offline para quem trabalha longe do sinal, como nosso app de serviços de poços."], ["Uma base, várias telas", "Desenvolvimento multiplataforma reduz custo e prazo."], ["Feito para a rotina", "Partimos do seu dia a dia, não de um modelo pronto."]]
+  },
+  {
+    "slug": "sistemas", "nome": "Sistemas e SaaS", "icone": "code", "planeta": "jupiter",
+    "resumo": "Sistemas web sob medida e plataformas SaaS para gestão do seu negócio.",
+    "intro": "Sistemas de gestão, painéis administrativos e plataformas por assinatura, com arquitetura moderna e escalável.",
+    "entregas": ["Sistemas de gestão sob medida", "Plataformas SaaS (assinatura)", "Painel administrativo", "APIs e integrações", "Hospedagem em nuvem"],
+    "beneficios": [["Escala com você", "Arquitetura em nuvem que cresce com o número de usuários."], ["Sem retrabalho", "Requisitos e critérios de aceite registrados antes de começar."], ["Seus dados", "Exportação de dados e documentação incluídas no escopo."]]
+  },
+  {
+    "slug": "ia-automacao", "nome": "IA e Automação", "icone": "brain", "planeta": "netuno",
+    "resumo": "Assistentes virtuais, IA generativa e automações que economizam horas por semana.",
+    "intro": "Integramos modelos de IA (Gemini, Groq, modelos locais com Ollama) a fluxos reais: assistentes, geração de conteúdo e automação de tarefas.",
+    "entregas": ["Assistentes virtuais e chatbots", "IA generativa (texto, imagem, voz)", "Automação de rotinas e planilhas", "IA local/offline para dados sensíveis", "Integração com sistemas existentes"],
+    "beneficios": [["Sem dependência", "Orquestração de vários provedores, como na AURA: se um falha, outro assume."], ["Privacidade", "Opção de rodar modelos localmente, sem enviar dados para fora."], ["Resultado mensurável", "Automação começa pelos processos que mais tomam tempo."]]
+  },
+  {
+    "slug": "sites-portais", "nome": "Sites e Portais", "icone": "globe", "planeta": "venus",
+    "resumo": "Sites institucionais, portais e landing pages rápidos, bonitos e otimizados para o Google.",
+    "intro": "Sites com identidade forte, carregamento rápido, SEO e formulários que geram contatos — como este que você está vendo.",
+    "entregas": ["Site institucional", "Portais com várias áreas", "Landing pages de campanha", "SEO e Google Analytics", "Hospedagem e domínio"],
+    "beneficios": [["Rápido", "Páginas leves e otimizadas para celular."], ["Encontrável", "SEO técnico desde o primeiro dia."], ["Gera contatos", "Formulários, WhatsApp e chamadas para ação em cada página."]]
+  },
+  {
+    "slug": "audiovisual-3d", "nome": "Audiovisual e 3D", "icone": "film", "planeta": "saturno",
+    "resumo": "Produção 3D no Blender, vídeos com IA e conteúdo visual para marcas e jogos.",
+    "intro": "Modelagem e animação 3D, cenários, vídeos com apoio de IA e materiais visuais para produtos digitais.",
+    "entregas": ["Modelagem e animação 3D", "Cenários e assets para jogos", "Vídeos com roteiro e narração por IA", "Identidade visual digital"],
+    "beneficios": [["Tudo em casa", "O mesmo time que faz o jogo ou app faz a arte."], ["Produção ágil", "Fluxos com IA reduzem tempo de roteiro e narração."], ["Reaproveitável", "Assets organizados em biblioteca para usos futuros."]]
+  }
+]

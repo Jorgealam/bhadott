@@ -1,0 +1,63 @@
+<!--{"title":"Carreira e colaborações | BHADOTT","description":"Faça parte da tripulação BHADOTT: colaborações remotas por projeto em jogos, 3D, apps, design e áudio.","section":"portal"}-->
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Carreira</span>
+        <h1>Junte-se à <span class="sun-text">tripulação</span></h1>
+        <p>A BHADOTT trabalha com colaboradores remotos por projeto. Se você cria jogos, arte, apps ou música, há espaço para você neste universo.</p>
+      </div>
+    </section>
+
+    <section class="section tight">
+      <div class="container">
+        <h2 class="section-title">Como é trabalhar aqui</h2>
+        <div class="grid grid-4">
+          <div class="card reveal"><div class="icon"><svg class="ico"><use href="/assets/icons.svg#globe"/></svg></div><h3>De qualquer lugar</h3><p>100% remoto, com comunicação por escrito e encontros on-line.</p></div>
+          <div class="card reveal"><div class="icon"><svg class="ico"><use href="/assets/icons.svg#gamepad"/></svg></div><h3>Projetos criativos</h3><p>Jogos, IA e produtos próprios, não só demandas de clientes.</p></div>
+          <div class="card reveal"><div class="icon"><svg class="ico"><use href="/assets/icons.svg#check"/></svg></div><h3>Combinado claro</h3><p>Escopo, prazo e pagamento definidos por escrito antes de começar.</p></div>
+          <div class="card reveal"><div class="icon"><svg class="ico"><use href="/assets/icons.svg#star"/></svg></div><h3>Crédito garantido</h3><p>Seu nome nos créditos dos jogos e no portfólio, se você quiser.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow">Oportunidades</span>
+        <h2 class="section-title">Colaborações abertas</h2>
+        <div class="grid" id="vagas">{{vagas_cards}}</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container narrow">
+        <span class="eyebrow">Desafio de código</span>
+        <h2 class="section-title">Mostre do que você é capaz</h2>
+        <div class="card challenge reveal">
+          <p>Opcional, mas conta pontos: crie em <strong>Godot</strong> (ou na sua tecnologia preferida) uma pequena cena com um planeta orbitando uma estrela, em que clicar na estrela gera uma "erupção". Publique no GitHub ou itch.io e envie o link no formulário abaixo.</p>
+          <ul class="values"><li>Tempo sugerido: até 4 horas</li><li>Avaliamos clareza do código, criatividade e acabamento</li><li>Todo envio recebe resposta</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="candidatura">
+      <div class="container narrow">
+        <h2 class="section-title">Envie seu portfólio</h2>
+        <form class="form card" action="#" method="post" enctype="multipart/form-data" data-form="carreira" novalidate>
+          {{> honeypot}}
+          <div class="form-row">
+            <div class="field"><label for="c-nome">Nome completo *</label><input id="c-nome" name="nome" required minlength="3" maxlength="100" autocomplete="name" /></div>
+            <div class="field"><label for="c-email">E-mail *</label><input id="c-email" name="email" type="email" required autocomplete="email" /></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="c-tel">Telefone / WhatsApp *</label><input id="c-tel" name="telefone" type="tel" inputmode="tel" required data-mask="phone" placeholder="(11) 90000-0000" autocomplete="tel" /></div>
+            <div class="field"><label for="c-vaga">Área de interesse *</label><select id="c-vaga" name="vaga" required><option value="">Selecione</option>{{vagas_options}}<option>Outra</option></select></div>
+          </div>
+          <div class="field"><label for="c-link">Portfólio, GitHub ou itch.io *</label><input id="c-link" name="link" type="url" required placeholder="https://" /></div>
+          <div class="field"><label for="c-desafio">Link do desafio de código (opcional)</label><input id="c-desafio" name="desafio" type="url" placeholder="https://" /></div>
+          <div class="field"><label for="c-cv">Currículo (PDF, até 5 MB)</label><input id="c-cv" name="curriculo" type="file" accept=".pdf,application/pdf" data-maxsize="5" /></div>
+          <div class="field"><label for="c-msg">Conte um pouco sobre você</label><textarea id="c-msg" name="mensagem" maxlength="2000"></textarea></div>
+          <label class="check"><input type="checkbox" name="consentimento" required /> <span>Autorizo o uso dos meus dados para este processo (<a href="/privacidade.html">privacidade</a>). *</span></label>
+          <button class="btn btn-primary" type="submit">Enviar candidatura</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>

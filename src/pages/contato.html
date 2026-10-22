@@ -1,0 +1,53 @@
+<!--{"title":"Contato | BHADOTT","description":"Fale com a BHADOTT: formulário, WhatsApp e agendamento de conversa. Atendimento remoto em todo o Brasil.","section":"portal"}-->
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Contato</span>
+        <h1>Vamos iniciar a <span class="sun-text">contagem regressiva</span>?</h1>
+        <p>Conte sobre seu projeto, dúvida ou parceria. Respondemos em até 1 dia útil.</p>
+      </div>
+    </section>
+
+    <section class="section tight">
+      <div class="container grid grid-2" style="align-items:start">
+        <form class="form card reveal" action="#" method="post" data-form="contato" novalidate>
+          {{> honeypot}}
+          <div class="orcamento-resumo" hidden></div>
+          <div class="field"><label for="nome">Nome *</label><input id="nome" name="nome" required minlength="3" maxlength="100" autocomplete="name" /></div>
+          <div class="form-row">
+            <div class="field"><label for="email">E-mail *</label><input id="email" name="email" type="email" required autocomplete="email" /></div>
+            <div class="field"><label for="telefone">Telefone (opcional)</label><input id="telefone" name="telefone" type="tel" inputmode="tel" data-mask="phone" placeholder="(11) 90000-0000" autocomplete="tel" /></div>
+          </div>
+          <div class="field"><label for="assunto">Assunto *</label>
+            <select id="assunto" name="assunto" required><option value="">Selecione</option><option>Orçamento de projeto</option><option>Jogos</option><option>Aplicativo</option><option>Sistema / SaaS</option><option>IA e automação</option><option>Site</option><option>Parceria ou investimento</option><option>Outro</option></select></div>
+          <div class="field"><label for="mensagem">Mensagem *</label><textarea id="mensagem" name="mensagem" required minlength="20" maxlength="3000"></textarea></div>
+          <label class="check"><input type="checkbox" name="consentimento" required /> <span>Concordo com o uso dos meus dados para responder este contato (<a href="/privacidade.html">privacidade</a>). *</span></label>
+          <div class="turnstile"></div>
+          <button class="btn btn-primary" type="submit">Enviar mensagem</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="reveal contact-side">
+          <ul class="contact-list">
+            <li><div class="icon"><svg class="ico"><use href="/assets/icons.svg#whatsapp"/></svg></div><div><strong>WhatsApp</strong><span><a href="#" data-whatsapp>Conversar agora</a></span></div></li>
+            <li><div class="icon"><svg class="ico"><use href="/assets/icons.svg#mail"/></svg></div><div><strong>E-mail</strong><span><a data-email href="#">—</a></span></div></li>
+            <li><div class="icon"><svg class="ico"><use href="/assets/icons.svg#globe"/></svg></div><div><strong>Onde estamos</strong><span>Brasil · atendimento 100% remoto</span></div></li>
+            <li><div class="icon"><svg class="ico"><use href="/assets/icons.svg#clock"/></svg></div><div><strong>Horário</strong><span>Segunda a sexta, 9h às 18h</span></div></li>
+          </ul>
+          <div class="card schedule">
+            <h3>Prefere conversar ao vivo?</h3>
+            <p>Agende uma conversa gratuita de 30 minutos.</p>
+            <a class="btn btn-ghost" href="#" data-calendly target="_blank" rel="noopener">Agendar conversa</a>
+          </div>
+          <div class="socials">
+            <a href="https://github.com/Jorgealam" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tight">
+      <div class="container narrow">
+        <h2 class="section-title">Dúvidas frequentes</h2>
+        <div class="faq">{{faq}}</div>
+      </div>
+    </section>

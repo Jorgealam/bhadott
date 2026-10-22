@@ -1,0 +1,14 @@
+{
+  "name": "BHADOTT",
+  "short_name": "BHADOTT",
+  "description": "Games · AI · Creative Technology — o universo BHADOTT.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#020617",
+  "lang": "pt-BR",
+  "icons": [
+    { "src": "/assets/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

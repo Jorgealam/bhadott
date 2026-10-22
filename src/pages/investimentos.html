@@ -1,0 +1,65 @@
+<!--{"title":"Investidores e Simulador de ROI | BHADOTT","description":"Para investidores e parceiros: visão do universo BHADOTT, divisões em desenvolvimento e simulador interativo de retorno de projetos digitais.","section":"portal"}-->
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Investidores e parceiros</span>
+        <h1>Invista em um <span class="sun-text">universo em expansão</span></h1>
+        <p>A BHADOTT está em fase inicial, com vários produtos próprios em desenvolvimento e os primeiros clientes. Buscamos parceiros que acreditem em tecnologia criativa feita no Brasil.</p>
+      </div>
+    </section>
+    <section class="section tight">
+      <div class="container grid grid-3">
+        <div class="card reveal"><span class="eyebrow">Produtos próprios</span><h3>AURA · Agro · Games · Video</h3><p>Quatro frentes com potencial de receita recorrente (SaaS, licenças e jogos).</p></div>
+        <div class="card reveal"><span class="eyebrow">Serviços</span><h3>Studio sob demanda</h3><p>Desenvolvimento para clientes financia a operação e valida tecnologia reaproveitável.</p></div>
+        <div class="card reveal"><span class="eyebrow">Modelo</span><h3>Licenças e SaaS</h3><p>Planos mensal, anual, prazo indeterminado e cessão de código (veja o <a href="/studio/orcamento.html#planos">comparador</a>).</p></div>
+      </div>
+      <div class="container" style="margin-top:24px"><div class="card investor-cta reveal"><div><h3>Quer conversar sobre parceria ou investimento?</h3><p>Apresentação e números detalhados são enviados sob solicitação.</p></div><a class="btn btn-primary magnetic" href="/contato.html">Solicitar apresentação</a></div></div>
+    </section>
+    <section class="page-hero" style="padding-top:48px">
+      <div class="container">
+        <span class="eyebrow">Simulador</span>
+        <h2 class="section-title">Quanto a tecnologia pode <span class="sun-text">retornar</span> para você?</h2>
+        <p>Simule o retorno de um projeto digital e compare cenários. Os gráficos se atualizam em tempo real.</p>
+      </div>
+    </section>
+    <section class="section" style="padding-top:16px">
+      <div class="container sim-grid">
+        <form class="card form" id="sim" aria-label="Parâmetros da simulação">
+          <div class="field"><label for="inv">Investimento inicial: <output id="inv-out"></output></label><input id="inv" type="range" min="20000" max="1000000" step="10000" value="150000" /></div>
+          <div class="field"><label for="ganho">Ganho mensal estimado (economia + receita): <output id="ganho-out"></output></label><input id="ganho" type="range" min="2000" max="150000" step="1000" value="18000" /></div>
+          <div class="field"><label for="manut">Custo mensal de manutenção: <output id="manut-out"></output></label><input id="manut" type="range" min="0" max="40000" step="500" value="3000" /></div>
+          <div class="field"><label for="meses">Horizonte: <output id="meses-out"></output></label><input id="meses" type="range" min="12" max="60" step="6" value="36" /></div>
+        </form>
+        <div class="card">
+          <div class="sim-out" aria-live="polite">
+            <div><b class="holo-text" id="r-roi">–</b><span>ROI no período</span></div>
+            <div><b class="holo-text" id="r-payback">–</b><span>Payback</span></div>
+            <div><b class="holo-text" id="r-lucro">–</b><span>Resultado líquido</span></div>
+          </div>
+          <div class="chart-box"><canvas id="chart-roi" role="img" aria-label="Gráfico do resultado acumulado do investimento ao longo dos meses"></canvas></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid grid-2">
+        <div class="card reveal">
+          <h3>Impacto médio por tipo de solução</h3>
+          <p>Ganho de eficiência operacional observado nos projetos do nosso portfólio.</p>
+          <div class="chart-box"><canvas id="chart-solucoes" role="img" aria-label="Gráfico de barras com ganho de eficiência por tipo de solução"></canvas></div>
+        </div>
+        <div class="card reveal">
+          <h3>Cenários de crescimento</h3>
+          <p>Evolução do resultado acumulado do seu cenário em versões conservadora, base e otimista.</p>
+          <div class="chart-box"><canvas id="chart-cenarios" role="img" aria-label="Gráfico comparando cenários conservador, base e otimista"></canvas></div>
+        </div>
+      </div>
+      <div class="container">
+        <p class="note">Simulação meramente ilustrativa, não constitui recomendação de investimento nem garantia de resultado. Os valores de impacto por solução devem ser substituídos pelos dados reais dos cases da BHADOTT.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container"><div class="cta reveal"><h2>Quer uma análise de viabilidade real?</h2><p>Nossos consultores calculam o retorno do seu projeto com base nos seus números.</p><a href="contato.html" class="btn btn-primary">Solicitar análise</a></div></div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" integrity="sha512-CQBWl4fJHWbryGE+Pc7UAxWMUMNMWzWxF4SQo9CgkJIN1kx6djDQZjh3Y8SZ1d+6I+1zze6Z7kHXO7q3UyZAWw==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+    <script src="/js/investimentos.js?v={{version}}" defer></script>

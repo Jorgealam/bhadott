@@ -1,0 +1,31 @@
+// ============================================================
+// BHADOTT — configurações e integrações (único lugar a editar)
+// Deixe vazio ("") o que ainda não estiver contratado: o site
+// funciona em modo demonstração e esconde o que não tiver dado.
+// ============================================================
+window.BHADOTT_CONFIG = {
+  // Google Analytics 4 (só carrega após o visitante aceitar cookies de análise)
+  GA_ID: "",                       // ex.: "G-ABC123XYZ"
+
+  // Envio de formulários (Formspree, Netlify Forms, Getform ou API própria)
+  FORM_ENDPOINT: "",               // ex.: "https://formspree.io/f/xxxxxxx"
+
+  // CRM: webhook que recebe uma cópia de cada lead (HubSpot, RD Station, Make, n8n...)
+  CRM_WEBHOOK: "",
+
+  // Anti-spam Cloudflare Turnstile (chave pública do site)
+  TURNSTILE_SITEKEY: "",
+
+  // Contatos
+  WHATSAPP: "",                    // só números com DDI e DDD, ex.: "5591999999999"
+  EMAIL: "",                       // ex.: "contato@bhadott.studio"
+  CALENDLY_URL: "",                // ex.: "https://calendly.com/bhadott/30min"
+
+  // Assistente Constelação: endpoint opcional de IA (ex.: Cloudflare Worker que chama a Claude API).
+  // Recebe POST { messages: [{role, content}] } e responde { reply: "..." }.
+  // Vazio = respostas automáticas locais.
+  CHAT_API: "",
+
+  // Pop-up de saída (oferta de e-book)
+  EXIT_POPUP: true,
+};

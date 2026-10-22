@@ -1,0 +1,8 @@
+[
+  { "p": "Quanto custa um projeto?", "r": "Depende do escopo. Faça uma simulação no <a href=\"/studio/orcamento.html\">orçamento interativo</a> e receba uma estimativa na hora. A proposta final vem depois de uma conversa sobre a sua rotina." },
+  { "p": "Em quanto tempo fica pronto?", "r": "Um protótipo ou site sai em poucas semanas; apps e sistemas completos levam alguns meses. O prazo fica registrado na proposta, com as entregas de cada etapa." },
+  { "p": "Vocês atendem fora da minha cidade?", "r": "Sim. A BHADOTT trabalha de forma remota e atende todo o Brasil — e projetos de fora também." },
+  { "p": "O código-fonte fica comigo?", "r": "Há modalidades de licença (mensal, anual ou por prazo indeterminado) e a cessão do código-fonte, contratada em instrumento específico. Tudo é explicado antes de assinar." },
+  { "p": "Vocês dão suporte depois da entrega?", "r": "Sim, conforme o plano de suporte contratado. Correções de erros e evoluções ficam descritas na proposta." },
+  { "p": "Fazem apps que funcionam sem internet?", "r": "Sim, é uma das nossas especialidades. Veja o <a href=\"/studio/cases/app-servicos-de-pocos.html\">app para serviços de poços</a>." }
+]

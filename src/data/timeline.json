@@ -1,0 +1,8 @@
+[
+  { "quando": "2022", "titulo": "Primeiros sites", "texto": "Os primeiros sites e portais feitos pela marca, ainda em formato artesanal." },
+  { "quando": "2023–2025", "titulo": "Jogos e experimentos", "texto": "Estudos em Unity, Unreal e Godot, biblioteca própria de recursos e os primeiros protótipos de jogos." },
+  { "quando": "Jun 2026", "titulo": "Portal BHADOTT Studio", "texto": "Lançamento do portal institucional com as áreas de projetos, jogos, agro e IA." },
+  { "quando": "Out 2026", "titulo": "Primeiro cliente e documentação", "texto": "App offline entregue para teste a um cliente real e toda a documentação comercial e contratual organizada." },
+  { "quando": "Out 2026", "titulo": "Universo BHADOTT", "texto": "Novo portal em formato de sistema solar, com o Studio como primeira divisão." },
+  { "quando": "Próximo", "titulo": "BHADOTT Academy", "texto": "Cursos, tutoriais e e-books sobre tecnologia, criação e projetos digitais." }
+]

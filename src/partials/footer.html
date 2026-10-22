@@ -1,0 +1,33 @@
+<footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="/" class="logo">{{> logo-ref}}<span class="logo-text">BHADOTT</span></a>
+          <p class="footer-tag" data-i18n="footer.tag">Games · AI · Creative Technology. Criado no Brasil — alcançando o mundo.</p>
+          <form class="newsletter" action="#" method="post" data-form="newsletter" novalidate>
+            {{> honeypot}}
+            <div class="field"><label for="nl-email" data-i18n="footer.news">Receba novidades do universo BHADOTT</label><input id="nl-email" name="email" type="email" required placeholder="seu@email.com" autocomplete="email" /></div>
+            <button class="btn btn-primary" type="submit" data-i18n="footer.subscribe">Assinar</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+        <div><h4 data-i18n="footer.company">Empresa</h4><ul>
+          <li><a href="/sobre.html" data-i18n="nav.about">Sobre</a></li>
+          <li><a href="/carreira.html" data-i18n="nav.career">Carreira</a></li>
+          <li><a href="/investimentos.html" data-i18n="nav.investors">Investidores</a></li>
+          <li><a href="/blog.html" data-i18n="nav.blog">Blog</a></li></ul></div>
+        <div><h4>Studio</h4><ul>
+          <li><a href="/studio/servicos/">Serviços</a></li>
+          <li><a href="/studio/portfolio.html">Portfólio</a></li>
+          <li><a href="/studio/tecnologias.html">Tecnologias</a></li>
+          <li><a href="/recursos.html">Materiais gratuitos</a></li></ul></div>
+        <div><h4 data-i18n="nav.contact">Contato</h4><ul>
+          <li><a href="/contato.html" data-i18n="footer.talk">Fale com a gente</a></li>
+          <li><a href="/studio/orcamento.html" data-i18n="nav.quote">Orçamento</a></li>
+          <li><a href="https://github.com/Jorgealam" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="/privacidade.html" data-i18n="footer.privacy">Privacidade e cookies</a></li>
+          <li><button class="linklike" data-open-cookies data-i18n="footer.cookies">Preferências de cookies</button></li></ul></div>
+      </div>
+      <p class="copy">© {{year}} BHADOTT Studio · <span data-i18n="footer.rights">Criado por Jorge Alam. Todos os direitos reservados.</span></p>
+    </div>
+  </footer>

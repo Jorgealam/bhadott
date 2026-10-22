@@ -1,0 +1,83 @@
+[
+  {
+    "slug": "aura", "nome": "AURA", "icone": "brain", "hue": 200, "destaque": true,
+    "status": "Em desenvolvimento", "filtro": "ia app", "tags": ["IA", "Desktop"],
+    "resumo": "Assistente pessoal com IA (texto, imagem e voz ao vivo), núcleo holográfico e ferramentas para usar o computador.",
+    "desafio": "Ter um assistente de verdade no computador, que converse por voz, gere imagens e execute tarefas, sem ficar refém de um único provedor de IA nem parar quando uma cota acaba.",
+    "solucao": "Aplicativo desktop em Electron com núcleo holográfico animado e orquestração de vários provedores (Gemini, Groq e Cloudflare Workers AI). Você define a ordem de uso e a AURA troca de provedor sozinha em caso de falta de cota, falha técnica ou chave recusada.",
+    "destaques": ["Conversa por texto e voz ao vivo", "Geração de imagens", "Troca automática entre provedores de IA", "Interface holográfica própria"],
+    "stack": ["Electron", "Vite", "Gemini API", "Groq", "Cloudflare Workers AI"]
+  },
+  {
+    "slug": "bhadott-agro", "nome": "BHADOTT Agro", "icone": "tractor", "hue": 140, "destaque": true,
+    "status": "Em desenvolvimento", "filtro": "software", "tags": ["SaaS", "AgroTech"],
+    "resumo": "Sistema de gestão rural: propriedade, produção, estoque, financeiro, rebanho, relatórios e acesso remoto.",
+    "desafio": "Produtores rurais controlam a fazenda em cadernos e planilhas soltas, com pouca visão do custo real da produção e do rebanho.",
+    "solucao": "Plataforma web com módulos de produção, estoque, financeiro e rebanho, relatórios e uma API própria em Cloudflare Workers para acesso remoto seguro.",
+    "destaques": ["Controle de produção e estoque", "Financeiro da propriedade", "Gestão de rebanho", "Relatórios e acesso remoto"],
+    "stack": ["React", "Vite", "Cloudflare Workers", "PWA"]
+  },
+  {
+    "slug": "fathomfield", "nome": "FATHOMFIELD", "icone": "gamepad", "hue": 30, "destaque": true,
+    "status": "Protótipo", "filtro": "jogos", "tags": ["Jogo", "Godot 4"],
+    "resumo": "Fazenda + sobrevivência + exploração profunda: cultive o vale de dia e desça 16 profundidades de cavernas geradas proceduralmente.",
+    "desafio": "Unir o ritmo tranquilo de um jogo de fazenda com a tensão de exploração e combate, mantendo cada descida diferente da anterior.",
+    "solucao": "Jogo top-down em Godot 4 com geração procedural de cavernas em 5 biomas, arena final, 3 chefes e a forja do Coração do Campo como objetivo.",
+    "destaques": ["16 profundidades procedurais", "5 biomas e arena final", "3 chefes", "Ciclo dia/noite com fazenda"],
+    "stack": ["Godot 4.7", "GDScript", "Forward+"]
+  },
+  {
+    "slug": "bhadott-survival-3d", "nome": "BHADOTT Survival 3D", "icone": "mountain", "hue": 15, "destaque": false,
+    "status": "Protótipo", "filtro": "jogos", "tags": ["Jogo", "3D"],
+    "resumo": "Sobrevivência em primeira pessoa em mundo aberto 3D, desenvolvido em Godot 4.",
+    "desafio": "Criar uma experiência de sobrevivência imersiva em 3D com produção enxuta.",
+    "solucao": "Mundo 3D em Godot 4 com foco em exploração, coleta e sobrevivência em primeira pessoa, aproveitando a biblioteca de recursos da BHADOTT.",
+    "destaques": ["Primeira pessoa", "Mundo aberto 3D", "Biblioteca de recursos própria"],
+    "stack": ["Godot 4.7", "GDScript", "Blender"]
+  },
+  {
+    "slug": "jogos-arcade", "nome": "Drone Arena, Neon Survivor, Legends e Damas 3D", "icone": "rocket", "hue": 280, "destaque": false,
+    "status": "Protótipo", "filtro": "jogos", "tags": ["Jogos", "Arcade"],
+    "resumo": "Família de protótipos de jogos BHADOTT: arena de drones, sobrevivência neon, aventura Legends e um jogo de damas em 3D.",
+    "desafio": "Testar rapidamente ideias de jogabilidade e reaproveitar sistemas entre projetos.",
+    "solucao": "Protótipos curtos em Godot que validam mecânicas e alimentam uma base de código e recursos compartilhada pela divisão de jogos.",
+    "destaques": ["BHADOTT Drone Arena", "Neon Survivor Arena", "BHADOTT Legends", "BHADOTT Damas 3D"],
+    "stack": ["Godot 4", "GDScript", "Blender"]
+  },
+  {
+    "slug": "barberpro", "nome": "BarberPro", "icone": "scissors", "hue": 330, "destaque": false,
+    "status": "Em desenvolvimento", "filtro": "app software", "tags": ["SaaS", "Mobile"],
+    "resumo": "Plataforma SaaS para barbearias: cadastro, agenda, serviços e gestão em um app para Android e iOS.",
+    "desafio": "Barbearias perdem horários e clientes com agendamento por mensagem e sem controle de serviços.",
+    "solucao": "Aplicativo mobile com cadastro de barbearias, agenda online, catálogo de serviços e painel de gestão.",
+    "destaques": ["Agenda online", "Multi-barbearia (SaaS)", "Android e iOS"],
+    "stack": ["Mobile multiplataforma", "API REST", "Nuvem"]
+  },
+  {
+    "slug": "app-servicos-de-pocos", "nome": "App para serviços de poços", "icone": "droplet", "hue": 190, "destaque": false,
+    "status": "Em teste", "filtro": "app", "tags": ["Offline", "Cliente"],
+    "resumo": "Aplicativo offline feito para um cliente: registro de serviços de poços, materiais, cobranças, desenho técnico 2D, PDFs e backups.",
+    "desafio": "Registrar serviços em campo, muitas vezes sem internet, e gerar relatórios e cobranças sem papelada.",
+    "solucao": "App que funciona 100% offline, com cálculos, controle de materiais, gestão financeira, desenho técnico 2D e geração de PDFs, com backup local.",
+    "destaques": ["Funciona sem internet", "Desenho técnico 2D", "Relatórios em PDF", "Gestão financeira"],
+    "stack": ["HTML/JS", "PWA", "Android"]
+  },
+  {
+    "slug": "bhadott-video", "nome": "BHADOTT Video", "icone": "film", "hue": 260, "destaque": false,
+    "status": "Planejamento", "filtro": "ia", "tags": ["IA", "Audiovisual"],
+    "resumo": "Plataforma de criação de vídeo com IA: roteiro, narração, imagens e produção de conteúdo digital.",
+    "desafio": "Produzir vídeo de qualidade exige roteiro, voz, imagem e edição — caro e lento para pequenos criadores.",
+    "solucao": "Fluxo integrado com IA para gerar roteiro, narração e imagens, com orquestração online e offline de modelos.",
+    "destaques": ["Roteiro com IA", "Narração", "Síntese de imagens", "Modo online e offline"],
+    "stack": ["Electron", "Vue 3", "FastAPI", "Ollama", "Gemini API"]
+  },
+  {
+    "slug": "bhadott-tools", "nome": "BHADOTT Tools", "icone": "wrench", "hue": 160, "destaque": false,
+    "status": "Ativo", "filtro": "software", "tags": ["Automação", "Ferramentas"],
+    "resumo": "Ferramentas internas, automações e utilitários de produtividade, incluindo o BHADOTT Macro e o Controle Financeiro.",
+    "desafio": "Tarefas repetitivas de organização, finanças e produção tomam tempo de criação.",
+    "solucao": "Conjunto de utilitários e automações próprios que aceleram o dia a dia do estúdio e podem ser adaptados para clientes.",
+    "destaques": ["BHADOTT Macro", "Controle Financeiro", "Automação de rotinas"],
+    "stack": ["Node.js", "Python", "Electron"]
+  }
+]

@@ -1,0 +1,24 @@
+    <article class="article">
+      <header class="page-hero">
+        <div class="container narrow">
+          <nav class="crumbs" aria-label="Trilha"><a href="/">Início</a> / <a href="/blog.html">Blog</a> / <span>{{categoria}}</span></nav>
+          <span class="tag">{{categoria}}</span>
+          <h1>{{titulo}}</h1>
+          <p class="post-meta">Por Jorge Alam · <time datetime="{{data}}">{{data_fmt}}</time> · {{leitura}} min de leitura</p>
+        </div>
+      </header>
+      <div class="container narrow prose">
+        {{conteudo}}
+        <hr />
+        <div class="share">
+          <span>Compartilhar:</span>
+          <a href="#" data-share="linkedin">LinkedIn</a>
+          <a href="#" data-share="whatsapp">WhatsApp</a>
+          <button class="linklike" data-share="copy">Copiar link</button>
+        </div>
+        <p><a href="/blog.html">← Voltar para o blog</a></p>
+      </div>
+    </article>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BlogPosting","headline":"{{titulo}}","datePublished":"{{data}}","author":{"@type":"Person","name":"Jorge Alam"},"publisher":{"@type":"Organization","name":"BHADOTT Studio"},"description":"{{resumo}}"}
+    </script>

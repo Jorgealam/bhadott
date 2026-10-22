@@ -1,0 +1,90 @@
+<!--{"title":"Orçamento interativo | BHADOTT Studio","description":"Monte seu projeto de jogo, app, sistema, site ou IA e veja na hora o investimento e o prazo estimados. Compare planos de licença.","section":"studio","scripts":["/js/orcamento.js"]}-->
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Orçamento interativo</span>
+        <h1>Monte sua <span class="holo-text">missão</span></h1>
+        <p>Responda 4 perguntas e veja uma estimativa de investimento e prazo na hora.</p>
+      </div>
+    </section>
+
+    <section class="section tight">
+      <div class="container wizard-grid">
+        <form class="card wizard" id="wizard" novalidate>
+          <ol class="wizard-steps" aria-label="Etapas">
+            <li class="active">Tipo</li><li>Tamanho</li><li>Recursos</li><li>Prazo</li>
+          </ol>
+
+          <fieldset class="step-pane active" data-step="0">
+            <legend>O que vamos construir?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="tipo" value="site" required /><span><svg class="ico"><use href="/assets/icons.svg#globe"/></svg>Site ou portal</span></label>
+              <label class="choice"><input type="radio" name="tipo" value="app" /><span><svg class="ico"><use href="/assets/icons.svg#phone"/></svg>Aplicativo</span></label>
+              <label class="choice"><input type="radio" name="tipo" value="jogo" /><span><svg class="ico"><use href="/assets/icons.svg#gamepad"/></svg>Jogo</span></label>
+              <label class="choice"><input type="radio" name="tipo" value="sistema" /><span><svg class="ico"><use href="/assets/icons.svg#code"/></svg>Sistema / SaaS</span></label>
+              <label class="choice"><input type="radio" name="tipo" value="ia" /><span><svg class="ico"><use href="/assets/icons.svg#brain"/></svg>IA / Automação</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="step-pane" data-step="1">
+            <legend>Qual o tamanho?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="tamanho" value="mvp" required /><span><strong>Essencial (MVP)</strong><small>O mínimo para validar a ideia</small></span></label>
+              <label class="choice"><input type="radio" name="tamanho" value="medio" /><span><strong>Profissional</strong><small>Pronto para clientes reais</small></span></label>
+              <label class="choice"><input type="radio" name="tamanho" value="completo" /><span><strong>Completo</strong><small>Muitas telas, integrações e escala</small></span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="step-pane" data-step="2">
+            <legend>Quais recursos? <small>(opcional)</small></legend>
+            <div class="choices multi">
+              <label class="choice"><input type="checkbox" name="extras" value="login" /><span>Login de usuários</span></label>
+              <label class="choice"><input type="checkbox" name="extras" value="pagamentos" /><span>Pagamentos on-line</span></label>
+              <label class="choice"><input type="checkbox" name="extras" value="admin" /><span>Painel administrativo</span></label>
+              <label class="choice"><input type="checkbox" name="extras" value="offline" /><span>Funciona offline</span></label>
+              <label class="choice"><input type="checkbox" name="extras" value="ia" /><span>Recursos de IA</span></label>
+              <label class="choice"><input type="checkbox" name="extras" value="idiomas" /><span>Vários idiomas</span></label>
+              <label class="choice"><input type="checkbox" name="extras" value="design" /><span>Design/arte exclusivos</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="step-pane" data-step="3">
+            <legend>Qual o prazo desejado?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="prazo" value="normal" required checked /><span><strong>Normal</strong><small>Ritmo recomendado</small></span></label>
+              <label class="choice"><input type="radio" name="prazo" value="urgente" /><span><strong>Urgente</strong><small>~30% mais rápido, +25% no investimento</small></span></label>
+            </div>
+          </fieldset>
+
+          <p class="form-status" role="status" aria-live="polite"></p>
+          <div class="wizard-nav">
+            <button type="button" class="btn btn-ghost" data-prev disabled>← Voltar</button>
+            <button type="button" class="btn btn-primary" data-next>Próximo →</button>
+          </div>
+        </form>
+
+        <aside class="card estimate" aria-live="polite">
+          <span class="eyebrow">Sua estimativa</span>
+          <div class="est-value"><span id="est-preco">—</span><small>investimento estimado</small></div>
+          <div class="est-value"><span id="est-prazo">—</span><small>prazo estimado</small></div>
+          <div class="timeline-bar" id="est-fases" aria-label="Fases do projeto"></div>
+          <ul class="est-list" id="est-itens"></ul>
+          <button class="btn btn-primary" id="est-enviar" disabled>Enviar para proposta</button>
+          <p class="note">Estimativa preliminar e não vinculante. A proposta final depende de conversa sobre escopo, entregas e exclusões.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="planos">
+      <div class="container">
+        <span class="eyebrow">Planos de licença</span>
+        <h2 class="section-title">Compare as modalidades</h2>
+        <p class="section-sub">Para produtos BHADOTT prontos (como os apps de gestão), você escolhe como quer usar.</p>
+        <div class="plans">
+          <div class="card plan reveal"><h3>Mensal</h3><p class="price">R$ 59<small>/mês</small></p><ul><li>Uso por 1 mês, com datas definidas</li><li>Ideal para testar na rotina</li><li>Suporte conforme contrato</li></ul></div>
+          <div class="card plan featured reveal"><span class="ribbon">Mais escolhido</span><h3>Anual</h3><p class="price">R$ 549<small>/ano</small></p><ul><li>12 meses com datas definidas</li><li>Equivale a ~R$ 46/mês</li><li>Suporte conforme contrato</li></ul></div>
+          <div class="card plan reveal"><h3>Prazo indeterminado</h3><p class="price">R$ 1.490</p><ul><li>Uso sem vencimento contratual</li><li>Não inclui suporte vitalício</li><li>Atualizações conforme contrato</li></ul></div>
+          <div class="card plan reveal"><h3>Cessão + código-fonte</h3><p class="price"><small>a partir de</small> R$ 15.000</p><ul><li>Transferência de direitos delimitada</li><li>Código-fonte e arquivos acordados</li><li>Instrumento específico</li></ul></div>
+        </div>
+        <p class="note">Valores de referência preliminares. Licença permite usar o software nos limites acordados, sem transferência automática do código. Condições finais em contrato.</p>
+      </div>
+    </section>

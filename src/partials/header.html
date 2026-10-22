@@ -1,0 +1,34 @@
+<header class="header">
+    <nav class="nav container" aria-label="Principal">
+      <a href="/" class="logo" aria-label="BHADOTT — Início">
+        {{> logo}}
+        <span class="logo-text">BHADOTT <small class="logo-sub">STUDIO</small></span>
+      </a>
+      <button class="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+      <ul class="menu" id="menu">
+        <li><a href="/" data-i18n="nav.home">Início</a></li>
+        <li><a href="/studio/" data-i18n="nav.studio">Studio</a></li>
+        <li><a href="/sobre.html" data-i18n="nav.about">Sobre</a></li>
+        <li><a href="/blog.html" data-i18n="nav.blog">Blog</a></li>
+        <li><a href="/carreira.html" data-i18n="nav.career">Carreira</a></li>
+        <li><a href="/investimentos.html" data-i18n="nav.investors">Investidores</a></li>
+        <li><a href="/contato.html" data-i18n="nav.contact">Contato</a></li>
+        <li class="menu-tools">
+          <select class="lang" aria-label="Idioma">
+            <option value="pt">PT</option><option value="en">EN</option><option value="es">ES</option>
+          </select>
+          <button class="theme-toggle" aria-label="Alternar tema claro/escuro"><svg class="ico"><use href="/assets/icons.svg#moon"/></svg></button>
+          <a class="btn btn-primary btn-sm magnetic" href="/studio/orcamento.html" data-i18n="nav.quote">Orçamento</a>
+        </li>
+      </ul>
+    </nav>
+    <nav class="subnav" aria-label="BHADOTT Studio">
+      <div class="container">
+        <a href="/studio/">Visão geral</a>
+        <a href="/studio/servicos/">Serviços</a>
+        <a href="/studio/portfolio.html">Portfólio</a>
+        <a href="/studio/tecnologias.html">Tecnologias</a>
+        <a href="/studio/orcamento.html">Orçamento</a>
+      </div>
+    </nav>
+  </header>
