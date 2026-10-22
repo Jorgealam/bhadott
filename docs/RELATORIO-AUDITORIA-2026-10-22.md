@@ -48,5 +48,4 @@
 | Formulários em modo demonstração | Falta o serviço de envio | Criar conta no Formspree e colar o endereço em `FORM_ENDPOINT` (`js/config.js`) |
 | Google Analytics desligado | Falta o ID | Colar o ID em `GA_ID` |
 | Imagem de compartilhamento | `og-image.png` não existe | Criar uma imagem 1200×630 |
-| E-mail "bhaddottudio@gmail.com" | Confirmar a grafia (parece faltar o "s" de *studio*) | Se estiver errado, corrigir em `EMAIL` |
 | A AURA do site responde por palavras-chave | Ainda não está ligada a um modelo de IA | Ligar a uma API (ex.: Worker na Cloudflare) e preencher `CHAT_API` |
