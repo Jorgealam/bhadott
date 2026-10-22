@@ -4,7 +4,7 @@
 O site inteiro é um **sistema solar**:
 - **BHADOTT (o Sol)** — o portal principal: a marca-mãe, quem somos, investidores, carreira, novidades e contato.
 - **Planetas = divisões e serviços.** A primeira divisão é o **BHADOTT Studio** (jogos, aplicativos, software, IA). Novas divisões entram como novos planetas, sem refazer nada.
-- **Constelações = navegação e assistente.** O assistente virtual "Constelação" liga pontos (perguntas) a destinos (páginas).
+- **AURA = a assistente.** A IA da BHADOTT Studio atende no canto da tela; cada mensagem acende uma estrela e forma a constelação da conversa.
 
 ## Identidade visual
 Segue o brand guide oficial (`branding/brand-guide.md` do portal anterior), mais o dourado do Sol:
@@ -43,7 +43,7 @@ Tipografia: **Space Grotesk** (títulos) + **Inter** (texto). Tema claro/escuro 
 - Cursor com rastro de luz e botões magnéticos (só desktop)
 - Transições entre páginas (View Transitions)
 - Seletor de idioma PT / EN / ES e tema claro/escuro
-- Botão flutuante de WhatsApp e assistente "Constelação" com o mascote **Bha**
+- Botão flutuante de WhatsApp e assistente **AURA** (a IA da BHADOTT Studio)
 - Banner de cookies LGPD (Analytics só liga após aceite)
 - Pop-up de saída oferecendo o e-book (1x por visitante)
 - PWA: instala como app e funciona offline após a 1ª visita

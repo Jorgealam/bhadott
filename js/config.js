@@ -17,11 +17,11 @@ window.BHADOTT_CONFIG = {
   TURNSTILE_SITEKEY: "",
 
   // Contatos
-  WHATSAPP: "",                    // só números com DDI e DDD, ex.: "5591999999999"
-  EMAIL: "",                       // ex.: "contato@bhadott.studio"
+  WHATSAPP: "5591991549535",       // só números com DDI e DDD, ex.: "5591999999999"
+  EMAIL: "bhaddottudio@gmail.com", // e-mail de contato exibido no site
   CALENDLY_URL: "",                // ex.: "https://calendly.com/bhadott/30min"
 
-  // Assistente Constelação: endpoint opcional de IA (ex.: Cloudflare Worker que chama a Claude API).
+  // Assistente AURA: endpoint opcional de IA (ex.: Cloudflare Worker que chama a Claude API).
   // Recebe POST { messages: [{role, content}] } e responde { reply: "..." }.
   // Vazio = respostas automáticas locais.
   CHAT_API: "",

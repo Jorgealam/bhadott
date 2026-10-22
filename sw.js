@@ -1,6 +1,6 @@
 // Service worker BHADOTT: funciona offline depois da primeira visita
 const CACHE = "bhadott-__VERSION__";
-const CORE = ["/", "/404.html", "/css/style.css", "/js/config.js", "/js/main.js", "/js/sky.js", "/js/chat.js", "/assets/icons.svg", "/assets/bha.svg", "/assets/favicon.svg"];
+const CORE = ["/", "/404.html", "/css/style.css", "/js/config.js", "/js/main.js", "/js/sky.js", "/js/chat.js", "/assets/icons.svg", "/assets/aura.svg", "/assets/favicon.svg"];
 
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(CORE)).then(() => self.skipWaiting()));
