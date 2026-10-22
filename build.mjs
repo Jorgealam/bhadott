@@ -149,6 +149,8 @@ Allow: /
 
 Sitemap: ${SITE_URL}/sitemap.xml
 `);
+// Arquivos de verificação do Google Search Console (googleXXXX.html) vão para a raiz
+for (const f of fs.readdirSync(".").filter((f) => /^google[0-9a-f]+.html$/.test(f))) fs.copyFileSync(f, path.join(OUT, f));
 for (const f of ["_headers", ".htaccess", "manifest.webmanifest"]) fs.copyFileSync(f, path.join(OUT, f));
 fs.writeFileSync(path.join(OUT, "sw.js"), read("sw.js").replace("__VERSION__", version));
 

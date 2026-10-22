@@ -22,7 +22,7 @@ const exists = (url) => {
   return fs.existsSync(path.join(OUT, p));
 };
 
-const pages = files.filter((f) => f.endsWith(".html"));
+const pages = files.filter((f) => f.endsWith(".html") && !/^google[0-9a-f]+.html$/.test(path.basename(f)));
 for (const file of pages) {
   const html = fs.readFileSync(file, "utf8");
   const rel = path.relative(OUT, file);
