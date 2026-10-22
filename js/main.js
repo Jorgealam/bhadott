@@ -258,10 +258,31 @@ if (CFG.TURNSTILE_SITEKEY && $(".turnstile")) {
 
 const SUCCESS = {
   newsletter: "Inscrição confirmada! Fique de olho no seu e-mail.",
-  ebook: "Pronto! O guia está a caminho do seu e-mail.",
-  recurso: "Pronto! O material está a caminho do seu e-mail.",
+  ebook: "Pronto! Seu guia está liberado:",
+  recurso: "Pronto! Seu material está liberado:",
   carreira: "Candidatura recebida! Respondemos todos os envios.",
   contato: "Mensagem enviada! Respondemos em até 1 dia útil.",
+};
+// Assunto do e-mail que chega para a BHADOTT e resposta automática para quem enviou
+const SUBJECT = {
+  newsletter: "Nova inscrição na newsletter",
+  ebook: "Material baixado (pop-up)",
+  recurso: "Material baixado",
+  carreira: "Nova candidatura / colaboração",
+  contato: "Novo contato pelo site",
+};
+const AUTORESPONSE = {
+  carreira: "Olá! Recebemos sua candidatura para colaborar com a BHADOTT. Todos os envios recebem resposta. Obrigado pelo interesse! — BHADOTT Studio",
+  contato: "Olá! Recebemos sua mensagem e respondemos em até 1 dia útil. Se for urgente, chame no WhatsApp pelo site. — BHADOTT Studio",
+  newsletter: "Inscrição confirmada! Você vai receber as novidades do universo BHADOTT. — BHADOTT Studio",
+};
+// Materiais gratuitos (liberados para download após o cadastro)
+const MATERIAIS = {
+  "Guia de Transformação Digital para Pequenos Negócios": "/assets/materiais/guia-transformacao-digital.pdf",
+  "Guia de Transformação Digital": "/assets/materiais/guia-transformacao-digital.pdf",
+  "Checklist: antes de contratar um app": "/assets/materiais/checklist-antes-de-contratar-um-app.pdf",
+  "Kit de Game Design de Bolso": "/assets/materiais/kit-game-design-de-bolso.pdf",
+  "Guia de IA para o dia a dia da empresa": "/assets/materiais/guia-ia-no-dia-a-dia.pdf",
 };
 
 $$("form[data-form]").forEach((form) => {
@@ -290,12 +311,20 @@ $$("form[data-form]").forEach((form) => {
     const btn = $('[type="submit"]', form);
     btn.disabled = true;
     const body = new FormData(form);
-    body.append("_origem", form.dataset.form);
-    body.append("_pagina", location.pathname);
+    body.delete("website");
+    body.append("_subject", `BHADOTT · ${SUBJECT[form.dataset.form] || "Formulário do site"}`);
+    body.append("_template", "table");
+    body.append("_captcha", "false");
+    if (AUTORESPONSE[form.dataset.form]) body.append("_autoresponse", AUTORESPONSE[form.dataset.form]);
+    body.append("origem", form.dataset.form);
+    body.append("pagina", location.pathname);
+    const material = MATERIAIS[body.get("recurso")];
     try {
       if (CFG.FORM_ENDPOINT) {
         const res = await fetch(CFG.FORM_ENDPOINT, { method: "POST", body, headers: { Accept: "application/json" } });
-        if (!res.ok) throw new Error();
+        const data = await res.json().catch(() => ({}));
+        // FormSubmit responde { success: "true" | "false", message }
+        if (!res.ok || String(data.success) === "false") throw new Error(data.message);
       }
       if (CFG.CRM_WEBHOOK) {
         const lead = Object.fromEntries([...body].filter(([, v]) => typeof v === "string"));
@@ -303,11 +332,22 @@ $$("form[data-form]").forEach((form) => {
       }
       status.textContent = (SUCCESS[form.dataset.form] || SUCCESS.contato) + (CFG.FORM_ENDPOINT ? "" : " (modo demonstração)");
       status.className = "form-status ok";
+      if (material) {
+        const a = document.createElement("a");
+        a.href = material; a.download = ""; a.className = "btn btn-primary btn-sm download";
+        a.textContent = "⬇ Baixar PDF";
+        status.append(" ", a);
+      }
       if (typeof gtag === "function") gtag("event", "generate_lead", { form: form.dataset.form });
       form.reset();
       try { sessionStorage.removeItem("bh-orcamento"); } catch {}
-      if (form.closest("dialog")) setTimeout(() => form.closest("dialog").close(), 1800);
-    } catch {
+      if (form.closest("dialog") && !material) setTimeout(() => form.closest("dialog").close(), 1800);
+    } catch (err) {
+      if (/activat/i.test(err?.message || "")) {
+        status.textContent = "Formulário em ativação: a BHADOTT precisa confirmar o e-mail de ativação. Tente de novo em alguns minutos ou fale pelo WhatsApp.";
+        status.className = "form-status err";
+        return;
+      }
       status.textContent = "Não foi possível enviar agora. Tente novamente em instantes" + (CFG.EMAIL ? ` ou escreva para ${CFG.EMAIL}.` : ".");
       status.className = "form-status err";
     } finally {

@@ -1,7 +1,7 @@
 # Cabeçalhos de segurança e cache (Cloudflare Pages e Netlify leem este arquivo)
 # Ao configurar CRM_WEBHOOK ou CHAT_API em js/config.js, adicione o domínio em connect-src.
 /*
-  Content-Security-Policy: default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://www.googletagmanager.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://formspree.io; frame-src https://challenges.cloudflare.com; form-action 'self' https://formspree.io; manifest-src 'self'; worker-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://www.googletagmanager.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://formspree.io https://formsubmit.co; frame-src https://challenges.cloudflare.com; form-action 'self' https://formspree.io https://formsubmit.co; manifest-src 'self'; worker-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY

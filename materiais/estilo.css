@@ -1,0 +1,24 @@
+@page { size: A4; margin: 18mm 16mm 20mm; }
+@page capa { margin: 0; }
+* { box-sizing: border-box; }
+body { font-family: "Segoe UI", Inter, Arial, sans-serif; color: #1e293b; font-size: 11pt; line-height: 1.55; margin: 0; }
+.capa { page: capa; width: 210mm; height: 296mm; display: flex; flex-direction: column; justify-content: center; padding: 0 24mm; overflow: hidden; color: #f8fafc;
+  background: radial-gradient(circle at 75% 30%, #fbbf24 0, #f97316 5%, transparent 11%), radial-gradient(ellipse at 20% 80%, rgba(139,92,246,.45), transparent 60%), #020617;
+  margin: 0; page-break-after: always; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.capa .marca { letter-spacing: .4em; font-weight: 700; color: #93c5fd; font-size: 10pt; }
+.capa h1 { font-size: 34pt; line-height: 1.1; margin: 10mm 0 6mm; }
+.capa p { font-size: 13pt; color: #cbd5e1; max-width: 140mm; }
+.capa .rodape { margin-top: auto; padding-bottom: 14mm; font-size: 9.5pt; color: #94a3b8; }
+h2 { color: #1d4ed8; font-size: 16pt; margin: 9mm 0 3mm; border-bottom: 2px solid #c7d2fe; padding-bottom: 2mm; }
+h3 { color: #6d28d9; font-size: 12pt; margin: 6mm 0 2mm; }
+ul, ol { padding-left: 6mm; }
+li { margin-bottom: 1.5mm; }
+.caixa { background: #eef2ff; border-left: 4px solid #6366f1; padding: 4mm 5mm; border-radius: 2mm; margin: 5mm 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.check li { list-style: none; position: relative; padding-left: 7mm; }
+.check li::before { content: "☐"; position: absolute; left: 0; color: #4f46e5; }
+table { width: 100%; border-collapse: collapse; margin: 4mm 0; font-size: 10pt; }
+th, td { border: 1px solid #cbd5e1; padding: 2.5mm 3mm; text-align: left; vertical-align: top; }
+th { background: #e0e7ff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.linha { border-bottom: 1px solid #94a3b8; height: 9mm; }
+.fim { margin-top: 10mm; padding: 6mm; border-radius: 3mm; background: #020617; color: #e2e8f0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.fim a { color: #93c5fd; }

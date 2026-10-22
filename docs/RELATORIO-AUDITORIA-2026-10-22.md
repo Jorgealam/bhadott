@@ -45,7 +45,13 @@
 |---|---|---|
 | Desempenho 83–86 no celular | A primeira pintura leva ~3 s em 4G simulado: fontes do Google e cache curto do GitHub Pages (10 min, não configurável) | Migrar para Cloudflare Pages (aplica o cache de 1 ano já configurado em `_headers`) |
 | Cabeçalhos de segurança | O GitHub Pages ignora o arquivo `_headers` | Também resolvido com Cloudflare Pages ou Netlify |
-| Formulários em modo demonstração | Falta o serviço de envio | Criar conta no Formspree e colar o endereço em `FORM_ENDPOINT` (`js/config.js`) |
 | Google Analytics desligado | Falta o ID | Colar o ID em `GA_ID` |
-| Imagem de compartilhamento | `og-image.png` não existe | Criar uma imagem 1200×630 |
 | A AURA do site responde por palavras-chave | Ainda não está ligada a um modelo de IA | Ligar a uma API (ex.: Worker na Cloudflare) e preencher `CHAT_API` |
+
+## Atualização — mesma data
+
+- **Formulários reais:** passaram a enviar para bhaddottudio@gmail.com via FormSubmit (grátis). Falta só clicar em "Activate Form" no primeiro e-mail.
+- **Materiais gratuitos:** os 4 PDFs foram criados e são liberados para download após o cadastro.
+- **Imagem de compartilhamento** criada (`assets/og-image.png`).
+- **Erro corrigido:** imagem de compartilhamento, logo para o Google e `robots.txt` apontavam para o domínio `www.bhadott.studio`, que ainda não existe. Agora usam o endereço real do site.
+- Próximos passos gratuitos: ver `docs/PLANO-GRATUITO.md`.

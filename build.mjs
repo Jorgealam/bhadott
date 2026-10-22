@@ -130,6 +130,7 @@ for (const pg of pages) {
     robots: pg.meta.noindex ? "noindex" : "index, follow",
     scripts: (pg.meta.scripts || []).map((s) => `<script src="${s}?v=${version}" defer></script>`).join("\n  "),
     version,
+    site_url: SITE_URL,
     year: new Date().getFullYear(),
   };
   vars.content = render(pg.body, vars);
@@ -143,7 +144,12 @@ for (const pg of pages) {
 for (const d of ["css", "js", "assets"]) fs.cpSync(d, path.join(OUT, d), { recursive: true });
 fs.mkdirSync(path.join(OUT, "data"), { recursive: true });
 fs.copyFileSync("src/data/i18n.json", path.join(OUT, "data/i18n.json"));
-for (const f of ["robots.txt", "_headers", ".htaccess", "manifest.webmanifest"]) fs.copyFileSync(f, path.join(OUT, f));
+fs.writeFileSync(path.join(OUT, "robots.txt"), `User-agent: *
+Allow: /
+
+Sitemap: ${SITE_URL}/sitemap.xml
+`);
+for (const f of ["_headers", ".htaccess", "manifest.webmanifest"]) fs.copyFileSync(f, path.join(OUT, f));
 fs.writeFileSync(path.join(OUT, "sw.js"), read("sw.js").replace("__VERSION__", version));
 
 const urls = pages.filter((p) => !p.meta.noindex).map((p) => "/" + p.out.replace(/index\.html$/, ""));

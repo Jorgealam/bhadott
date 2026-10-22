@@ -8,7 +8,8 @@ window.BHADOTT_CONFIG = {
   GA_ID: "",                       // ex.: "G-ABC123XYZ"
 
   // Envio de formulários (Formspree, Netlify Forms, Getform ou API própria)
-  FORM_ENDPOINT: "",               // ex.: "https://formspree.io/f/xxxxxxx"
+  // Envio grátis via FormSubmit (sem conta). Na 1ª mensagem chega um e-mail de ativação: clique em "Activate Form".
+  FORM_ENDPOINT: "https://formsubmit.co/ajax/bhaddottudio@gmail.com",
 
   // CRM: webhook que recebe uma cópia de cada lead (HubSpot, RD Station, Make, n8n...)
   CRM_WEBHOOK: "",
