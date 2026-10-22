@@ -18,8 +18,8 @@
 | Páginas que "escorregavam" no celular | 2 (Início e Studio) | 0 |
 | Lighthouse — SEO | 100 | 100 |
 | Lighthouse — Boas práticas | 100 | 100 |
-| Lighthouse — Acessibilidade | 90 / 92 | ver nova medição abaixo |
-| Lighthouse — Desempenho (celular) | 83 / 86 | sem mudança (ver pendências) |
+| Lighthouse — Acessibilidade | 90 / 92 | **100** |
+| Lighthouse — Desempenho (celular) | 83 / 86 | 81–86 (varia a cada medição; ver pendências) |
 
 ## Erros encontrados e corrigidos
 
