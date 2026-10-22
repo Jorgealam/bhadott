@@ -19,15 +19,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
-      - name: Gerar site
+      - name: Definir endereço
         # Sem domínio próprio o site fica em /<nome-do-repositório>; com domínio (arquivo CNAME), na raiz.
         run: |
-          if [ -f CNAME ]; then export BASE_PATH=""; export SITE_URL="https://$(cat CNAME)";
-          else export BASE_PATH="/${GITHUB_REPOSITORY#*/}"; export SITE_URL="https://${GITHUB_REPOSITORY_OWNER,,}.github.io/${GITHUB_REPOSITORY#*/}"; fi
+          if [ -f CNAME ]; then echo "BASE_PATH=" >> $GITHUB_ENV; echo "SITE_URL=https://$(cat CNAME)" >> $GITHUB_ENV;
+          else echo "BASE_PATH=/${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV; echo "SITE_URL=https://${GITHUB_REPOSITORY_OWNER,,}.github.io/${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV; fi
+      - name: Gerar site
+        run: |
           node build.mjs
           [ -f CNAME ] && cp CNAME dist/ || true
       - name: Testar
