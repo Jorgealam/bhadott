@@ -18,7 +18,7 @@ window.BHADOTT_CONFIG = {
   TURNSTILE_SITEKEY: "",
 
   // Contatos
-  WHATSAPP: "5591991549535",       // só números com DDI e DDD, ex.: "5591999999999"
+  WHATSAPP: "5591991549435",      // só números com DDI e DDD, ex.: "5591999999999"
   EMAIL: "bhaddottudio@gmail.com", // e-mail de contato exibido no site
   CALENDLY_URL: "",                // ex.: "https://calendly.com/bhadott/30min"
 
