@@ -1,0 +1,271 @@
+{
+  "_nota": "DADOS DEMONSTRATIVOS (Fase 01). Jogos ficticios; precos e datas ilustrativos. Fase 02: substituir pela biblioteca CRUD oficial.",
+  "heros": [
+    "img/heros/heros01",
+    "img/heros/heros03",
+    "img/heros/heros04",
+    "img/heros/heros05"
+  ],
+  "categories": [
+    "strategy",
+    "action",
+    "shooter",
+    "platform",
+    "openworld",
+    "sandbox",
+    "edu",
+    "rpg",
+    "adventure",
+    "simulation"
+  ],
+  "games": [
+    {
+      "id": "royal-dama-3d",
+      "name": "Royal Dama 3D",
+      "cats": [
+        "strategy"
+      ],
+      "price": 29.9,
+      "sale": 0,
+      "free": false,
+      "age": "L",
+      "stars": 4.6,
+      "release": "2026-12-05",
+      "new": true,
+      "featured": true,
+      "players": "1-2",
+      "extUrl": "",
+      "sysreq": "low"
+    },
+    {
+      "id": "badot-strike",
+      "name": "Bhadott Strike",
+      "cats": [
+        "action",
+        "shooter"
+      ],
+      "price": 49.9,
+      "sale": 30,
+      "free": false,
+      "age": "14",
+      "stars": 4.4,
+      "release": "2027-01-20",
+      "new": true,
+      "featured": true,
+      "players": "1-8",
+      "extUrl": "",
+      "sysreq": "high"
+    },
+    {
+      "id": "blockverse-adventures",
+      "name": "BlockVerse Adventures",
+      "cats": [
+        "sandbox",
+        "adventure"
+      ],
+      "price": 39.9,
+      "sale": 0,
+      "free": false,
+      "age": "10",
+      "stars": 4.7,
+      "release": "2026-11-28",
+      "new": false,
+      "featured": true,
+      "players": "1-4",
+      "extUrl": "",
+      "sysreq": "mid"
+    },
+    {
+      "id": "planetario-bhadock",
+      "name": "Planetário Bhadock",
+      "cats": [
+        "edu",
+        "simulation"
+      ],
+      "price": 0,
+      "sale": 0,
+      "free": true,
+      "age": "L",
+      "stars": 4.8,
+      "release": "2026-11-01",
+      "new": false,
+      "featured": true,
+      "players": "1",
+      "extUrl": "",
+      "sysreq": "low"
+    },
+    {
+      "id": "magic-valmes",
+      "name": "Magic Valmes",
+      "cats": [
+        "rpg",
+        "adventure"
+      ],
+      "price": 59.9,
+      "sale": 20,
+      "free": false,
+      "age": "12",
+      "stars": 4.5,
+      "release": "2027-02-14",
+      "new": true,
+      "featured": true,
+      "players": "1-2",
+      "extUrl": "",
+      "sysreq": "high"
+    },
+    {
+      "id": "eduquest",
+      "name": "EduQuest",
+      "cats": [
+        "edu"
+      ],
+      "price": 0,
+      "sale": 0,
+      "free": true,
+      "age": "L",
+      "stars": 4.3,
+      "release": "2026-11-15",
+      "new": false,
+      "featured": false,
+      "players": "1-4",
+      "extUrl": "",
+      "sysreq": "low"
+    },
+    {
+      "id": "bhadock-sprite",
+      "name": "Bhadock Sprite",
+      "cats": [
+        "platform",
+        "adventure"
+      ],
+      "price": 19.9,
+      "sale": 0,
+      "free": false,
+      "age": "10",
+      "stars": 4.5,
+      "release": "2026-12-12",
+      "new": true,
+      "featured": true,
+      "players": "1-2",
+      "extUrl": "",
+      "sysreq": "low"
+    },
+    {
+      "id": "urbano-horizonte",
+      "name": "Urbano Horizonte",
+      "cats": [
+        "openworld"
+      ],
+      "price": 69.9,
+      "sale": 15,
+      "free": false,
+      "age": "16",
+      "stars": 4.4,
+      "release": "2027-03-01",
+      "new": true,
+      "featured": true,
+      "players": "1-4",
+      "extUrl": "",
+      "sysreq": "high"
+    }
+  ],
+  "sysreq": {
+    "low": {
+      "os": "Windows 10",
+      "cpu": "Dual-core 2.0 GHz",
+      "ram": "4 GB",
+      "gpu": "Integrated graphics",
+      "disk": "1 GB"
+    },
+    "mid": {
+      "os": "Windows 10 64-bit",
+      "cpu": "Quad-core 2.6 GHz",
+      "ram": "8 GB",
+      "gpu": "GTX 750 Ti class",
+      "disk": "4 GB"
+    },
+    "high": {
+      "os": "Windows 10/11 64-bit",
+      "cpu": "6-core 3.2 GHz",
+      "ram": "16 GB",
+      "gpu": "GTX 1660 class",
+      "disk": "20 GB"
+    }
+  },
+  "credits": [
+    {
+      "id": "c100",
+      "coins": 100,
+      "price": 10
+    },
+    {
+      "id": "c500",
+      "coins": 550,
+      "price": 50,
+      "bonus": true
+    },
+    {
+      "id": "c1000",
+      "coins": 1200,
+      "price": 100,
+      "bonus": true
+    }
+  ],
+  "news": [
+    {
+      "id": "n1",
+      "date": "2026-11-02",
+      "img": "news1"
+    },
+    {
+      "id": "n2",
+      "date": "2026-10-28",
+      "img": "news2"
+    },
+    {
+      "id": "n3",
+      "date": "2026-10-20",
+      "img": "news3"
+    }
+  ],
+  "partners": [
+    {
+      "id": "terceiros",
+      "name": "terceiros",
+      "logo": "img/partners/removido.png",
+      "url": "/",
+      "official": true
+    },
+    {
+      "id": "terceiros",
+      "name": "terceiros",
+      "logo": "",
+      "url": "",
+      "official": false
+    },
+    {
+      "id": "terceiros",
+      "name": "terceiros",
+      "logo": "img/partners/removido.png",
+      "url": "/",
+      "official": true
+    }
+  ],
+  "team": [
+    {
+      "id": "integrante",
+      "name": "integrante",
+      "roleKey": "team.integrante.role",
+      "photo": "img/team/avatar-placeholder.svg",
+      "provisional": false
+    },
+    {
+      "id": "jorge",
+      "name": "Jorge Alan",
+      "roleKey": "team.jorge.role",
+      "photo": "img/team/avatar-placeholder.svg",
+      "provisional": true
+    }
+  ],
+  "planetTextures": []
+}

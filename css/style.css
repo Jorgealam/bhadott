@@ -617,3 +617,14 @@ a.card:hover, a.card.reveal.visible:hover { transform: translateY(-4px); }
   .reveal { opacity: 1; transform: none; }
   html { scroll-behavior: auto; }
 }
+
+/* Destaque do Planetário 3D (Bhadott Games) na página inicial */
+.feature-planetario { position: relative; display: block; border-radius: 28px; overflow: hidden; border: 1px solid var(--border); min-height: 320px; color: #fff; }
+.feature-planetario:hover { text-decoration: none; border-color: rgba(96,165,250,.6); box-shadow: var(--shadow); }
+.feature-planetario img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .8s; }
+.feature-planetario:hover img { transform: scale(1.04); }
+.feature-planetario::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(2,6,23,.92) 0%, rgba(2,6,23,.55) 55%, transparent 100%); }
+.feature-texto { position: relative; z-index: 1; padding: 48px; max-width: 520px; }
+.feature-texto h2 { font-size: clamp(2rem, 4vw, 2.8rem); color: #fff; margin-bottom: 10px; }
+.feature-texto p { color: #cbd5e1; margin-bottom: 24px; }
+@media (max-width: 640px) { .feature-texto { padding: 28px; } .feature-planetario::after { background: linear-gradient(0deg, rgba(2,6,23,.95) 30%, rgba(2,6,23,.4)); } }

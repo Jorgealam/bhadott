@@ -142,6 +142,8 @@ for (const pg of pages) {
 
 // Arquivos estáticos
 for (const d of ["css", "js", "assets"]) fs.cpSync(d, path.join(OUT, d), { recursive: true });
+// Área Bhadott Games (gerada por tools/importar-games.mjs)
+if (fs.existsSync("games")) fs.cpSync("games", path.join(OUT, "games"), { recursive: true });
 fs.mkdirSync(path.join(OUT, "data"), { recursive: true });
 fs.copyFileSync("src/data/i18n.json", path.join(OUT, "data/i18n.json"));
 fs.writeFileSync(path.join(OUT, "robots.txt"), `User-agent: *
@@ -155,6 +157,9 @@ for (const f of ["_headers", ".htaccess", "manifest.webmanifest"]) fs.copyFileSy
 fs.writeFileSync(path.join(OUT, "sw.js"), read("sw.js").replace("__VERSION__", version));
 
 const urls = pages.filter((p) => !p.meta.noindex).map((p) => "/" + p.out.replace(/index\.html$/, ""));
+// Páginas públicas da área de jogos (as de conta/carrinho ficam fora do Google)
+const GAMES_PUBLIC = ["", "jogos.html", "loja.html", "planetario.html", "gratuitos.html", "promocoes.html", "estudio.html", "parceiros.html", "noticias.html"];
+if (fs.existsSync("games")) urls.push(...GAMES_PUBLIC.map((p) => "/games/" + p));
 fs.writeFileSync(path.join(OUT, "sitemap.xml"),
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
   urls.map((u) => `  <url><loc>${SITE_URL}${u}</loc><lastmod>${new Date().toISOString().slice(0, 10)}</lastmod></url>`).join("\n") +
@@ -168,13 +173,14 @@ if (!DEV) {
 
 // Prefixa os caminhos absolutos com BASE (publicação em subpasta)
 if (BASE) {
-  const ROOTS = "assets|css|js|data|studio|blog|sobre|contato|carreira|investimentos|recursos|privacidade|404|sw\\.js|manifest";
+  const ROOTS = "assets|css|js|data|studio|games|blog|sobre|contato|carreira|investimentos|recursos|privacidade|404|sw\\.js|manifest";
   const re = new RegExp(`(["'\`(])\\/(?=(?:${ROOTS})|["'\`#?])`, "g");
   const fix = (dir) => {
     for (const f of fs.readdirSync(dir)) {
       const full = path.join(dir, f);
       if (fs.statSync(full).isDirectory()) { fix(full); continue; }
       if (!/\.(html|js|css|webmanifest)$/.test(f)) continue;
+      if (/\.min\.(js|css)$/.test(f) || /[\\/]vendor[\\/]/.test(full)) continue; // bibliotecas de terceiros ficam intactas
       fs.writeFileSync(full, read(full).replace(re, `$1${BASE}/`));
     }
   };

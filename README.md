@@ -41,3 +41,14 @@ npm run build   # versão de produção minificada em dist/
 - **Hospedagem Apache:** envie o conteúdo de `dist/` (inclui `.htaccess`).
 
 Criado por Jorge Alam.
+
+## Área Bhadott Games (`/games/`)
+
+O site Bhadott Games (originalmente em bhadott.com.br, ASP.NET) foi incorporado como a área de jogos do portal:
+catálogo, loja demonstrativa, Planetário 3D, estúdio, parceiros e notícias.
+
+- **Cópia original (backup):** `D:\TRABALHO\PROJETOS\02_SITES_E_PORTAIS\Bhadott Games - Copia do site publicado`
+- **Para atualizar** depois de mudar o Bhadott Games: rode `node tools/importar-games.mjs` e depois `npm test`.
+  O importador converte `.aspx` → `.html`, aponta a raiz do app para `/games/`, move os scripts embutidos para arquivos
+  e adiciona o link "Portal" no menu.
+- O catálogo (`games/data/games.json`) é marcado como **demonstrativo**: preços e jogos de exemplo.

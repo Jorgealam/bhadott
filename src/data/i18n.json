@@ -1,6 +1,6 @@
 {
   "en": {
-    "nav.home": "Home", "nav.studio": "Studio", "nav.about": "About", "nav.blog": "Blog", "nav.career": "Careers",
+    "nav.home": "Home", "nav.studio": "Studio", "nav.games": "Games", "nav.about": "About", "nav.blog": "Blog", "nav.career": "Careers",
     "nav.investors": "Investors", "nav.contact": "Contact", "nav.quote": "Get a quote",
     "footer.tag": "Games · AI · Creative Technology. Built in Brazil — reaching the world.",
     "footer.news": "Get news from the BHADOTT universe", "footer.subscribe": "Subscribe", "footer.company": "Company",
@@ -21,7 +21,7 @@
     "home.faq": "Frequently asked questions"
   },
   "es": {
-    "nav.home": "Inicio", "nav.studio": "Studio", "nav.about": "Nosotros", "nav.blog": "Blog", "nav.career": "Empleo",
+    "nav.home": "Inicio", "nav.studio": "Studio", "nav.games": "Juegos", "nav.about": "Nosotros", "nav.blog": "Blog", "nav.career": "Empleo",
     "nav.investors": "Inversores", "nav.contact": "Contacto", "nav.quote": "Presupuesto",
     "footer.tag": "Games · AI · Creative Technology. Creado en Brasil — alcanzando el mundo.",
     "footer.news": "Recibe novedades del universo BHADOTT", "footer.subscribe": "Suscribirse", "footer.company": "Empresa",

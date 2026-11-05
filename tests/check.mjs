@@ -30,8 +30,9 @@ for (const file of pages) {
 
   if (!/<title>[^<]{10,}<\/title>/.test(html)) fail("título ausente ou curto");
   if (!/<meta name="description" content="[^"]{20,}"/.test(html)) fail("descrição ausente ou curta");
+  // Área Bhadott Games: o <h1> é montado pelo JavaScript do app, então não é contado aqui
   const h1 = (html.match(/<h1[\s>]/g) || []).length;
-  if (h1 !== 1) fail(`esperado 1 <h1>, encontrado ${h1}`);
+  if (!/^games[\\/]/.test(rel) && h1 !== 1) fail(`esperado 1 <h1>, encontrado ${h1}`);
   if (/\{\{[>\s\w-]+\}\}/.test(html)) fail("marcador {{ }} não substituído");
   for (const [, tag] of html.matchAll(/(<img\b[^>]*>)/g)) if (!/\balt=/.test(tag)) fail(`imagem sem alt: ${tag.slice(0, 60)}`);
   for (const [, url] of html.matchAll(/(?:href|src)="(\/[^"]*)"/g)) {
