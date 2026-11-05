@@ -31,7 +31,7 @@ for (const f of pages) {
   h = h.replace(/(src|href)="(img|js|css|data|lang)\//g, '$1="/games/$2/');
   // Link de volta ao portal BHADOTT no fim do menu principal
   h = h.replace(/(<ul class="navbar-nav bd-menu[^"]*">[\s\S]*?)(<\/ul>)/,
-    '$1    <li class="nav-item"><a class="nav-link text-nowrap" href="/" title="Voltar ao portal BHADOTT" aria-label="Voltar ao portal BHADOTT"><i class="bi bi-stars"></i> Portal</a></li>\n                    $2');
+    '$1    <li class="nav-item"><a class="nav-link text-nowrap" href="/" title="Voltar ao portal BHADOTT" aria-label="Voltar ao portal BHADOTT"><i class="bi bi-stars"></i><span class="d-lg-none d-xxl-inline"> Portal</span></a></li>\n                    $2');
   h = h.replace(/<title>\s*([\s\S]*?)\s*<\/title>/, (_, t) => `<title>${t.trim()}</title>`);
   fs.writeFileSync(path.join(OUT, PAGE(path.basename(f, ".aspx")) + ".html"), h);
 }
