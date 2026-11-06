@@ -179,8 +179,8 @@ a { color: var(--blue-l); }
   cursor: pointer; backdrop-filter: blur(6px); transition: background .2s, border-color .2s;
 }
 .carrossel-seta:hover { background: var(--grad); border-color: transparent; }
-.carrossel-seta.anterior { right: 76px; } .carrossel-seta.anterior .ico { rotate: 180deg; }
-.carrossel-seta.proximo { right: 24px; }
+.carrossel-seta.anterior { left: 24px; } .carrossel-seta.anterior .ico { rotate: 180deg; }
+.carrossel-seta.proximo { left: 76px; }
 .carrossel-pontos { position: absolute; left: 50%; bottom: 28px; translate: -50% 0; z-index: 3; display: flex; gap: 10px; }
 .carrossel-pontos button { width: 34px; height: 5px; border-radius: 4px; border: 0; background: rgba(255, 255, 255, .3); cursor: pointer; transition: background .3s, width .3s; }
 .carrossel-pontos button[aria-selected="true"] { background: var(--grad); width: 54px; }
