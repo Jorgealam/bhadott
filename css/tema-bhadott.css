@@ -1,0 +1,237 @@
+/* ============================================================
+   Tema BHADOTT — mesma base visual do Bhadott Games (/games/)
+   Carregado depois de style.css. Cada área tem sua cor de destaque:
+     portal  → vermelho/laranja (igual ao Games)
+     studio  → azul/violeta
+   ============================================================ */
+:root {
+  --f-display: "Bahnschrift", "Segoe UI Variable Display", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  --f-body: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  --bg: #0a0b12;
+  --bg-2: #10131b;
+  --card: #141824;
+  --card-solid: #141824;
+  --surface-2: #1b2030;
+  --border: rgba(255, 255, 255, .09);
+  --border-2: rgba(255, 255, 255, .16);
+  --text: #e9edf7;
+  --text-2: #c3cad9;
+  --muted: #aab3c7;
+  /* destaque do portal (Games) */
+  --accent: #ff4b3a;
+  --accent-2: #ff9a2e;
+  --grad: linear-gradient(180deg, #ff4b3a, #c8141c);
+  --grad-h: linear-gradient(135deg, #ff4b3a, #8f3dff);
+  --kicker: #ff9a2e;
+  --chip-bg: rgba(143, 61, 255, .16);
+  --chip-tx: #cdb0ff;
+  --chip-bd: rgba(143, 61, 255, .5);
+  --glow: 0 0 0 1px rgba(229, 36, 43, .5), 0 10px 34px rgba(229, 36, 43, .28);
+  --btn-shadow: 0 0 0 1px rgba(255, 120, 100, .5), 0 6px 22px rgba(229, 36, 43, .45);
+  --blue-l: #6aa2ff;
+  --holo: linear-gradient(120deg, #ff9a2e, #ff4b3a 45%, #8f3dff);
+  --sun-grad: linear-gradient(120deg, #ffd36b, #ff9a2e 40%, #ff4b3a);
+  --shadow: 0 18px 50px rgba(229, 36, 43, .18);
+  --radius: 22px;
+  color-scheme: dark;
+}
+/* BHADOTT Studio: azul → violeta (tema original do Games) */
+[data-section="studio"] {
+  --accent: #2f7bff;
+  --accent-2: #3df0ff;
+  --grad: linear-gradient(135deg, #2f7bff, #8b5cf6);
+  --grad-h: linear-gradient(135deg, #3df0ff, #2f7bff 45%, #8b5cf6);
+  --kicker: #3df0ff;
+  --chip-bg: rgba(47, 123, 255, .15);
+  --chip-tx: #9cc2ff;
+  --chip-bd: rgba(47, 123, 255, .4);
+  --glow: 0 0 0 1px rgba(47, 123, 255, .4), 0 8px 30px rgba(47, 123, 255, .25);
+  --btn-shadow: 0 6px 22px rgba(47, 123, 255, .35);
+  --holo: linear-gradient(120deg, #3df0ff, #2f7bff 45%, #8b5cf6);
+  --sun-grad: linear-gradient(120deg, #9cc2ff, #6aa2ff 40%, #8b5cf6);
+  --shadow: 0 18px 50px rgba(47, 123, 255, .22);
+}
+:root[data-theme="light"] {
+  --bg: #f3f4f9; --bg-2: #e9ebf4; --card: #ffffff; --card-solid: #ffffff; --surface-2: #f6f7fb;
+  --border: rgba(15, 23, 42, .1); --border-2: rgba(15, 23, 42, .18);
+  --text: #0f172a; --text-2: #334155; --muted: #475569; --chip-tx: #6d28d9; --blue-l: #2563eb;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    --bg: #f3f4f9; --bg-2: #e9ebf4; --card: #ffffff; --card-solid: #ffffff; --surface-2: #f6f7fb;
+    --border: rgba(15, 23, 42, .1); --border-2: rgba(15, 23, 42, .18);
+    --text: #0f172a; --text-2: #334155; --muted: #475569; --chip-tx: #6d28d9; --blue-l: #2563eb;
+    color-scheme: light;
+  }
+}
+
+/* ---------- Base ---------- */
+body {
+  font-family: var(--f-body);
+  background: radial-gradient(1100px 500px at 85% -5%, rgba(143, 61, 255, .14), transparent),
+              radial-gradient(900px 500px at 0% 30%, rgba(229, 36, 43, .08), transparent), var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+[data-section="studio"] body {
+  background: radial-gradient(1100px 500px at 85% -5%, rgba(139, 92, 246, .16), transparent),
+              radial-gradient(900px 500px at 0% 30%, rgba(47, 123, 255, .1), transparent), var(--bg);
+}
+:root[data-theme="light"] body { background: var(--bg); }
+h1, h2, h3, h4 { font-family: var(--f-display); font-style: italic; font-weight: 800; letter-spacing: .01em; }
+a { color: var(--blue-l); }
+.eyebrow, .kicker {
+  font: 700 .78rem var(--f-display); letter-spacing: .24em; text-transform: uppercase; color: var(--kicker);
+  display: inline-flex; align-items: center; gap: .6rem;
+}
+.eyebrow::before { content: ""; width: 26px; height: 2px; background: var(--grad); border-radius: 2px; }
+.sec-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 1rem; flex-wrap: wrap; }
+.section-title { font-size: clamp(1.7rem, 4vw, 2.6rem); }
+.holo-text { background: var(--holo); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.sun-text { background: var(--sun-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+/* ---------- Cabeçalho (igual ao Games) ---------- */
+.header { background: rgba(10, 11, 18, .82); border-bottom: 1px solid var(--border); }
+:root[data-theme="light"] .header { background: rgba(243, 244, 249, .9); }
+.logo { gap: .65rem; }
+.logo-text { display: flex; flex-direction: column; line-height: 1; font-family: var(--f-display); font-style: normal; font-size: 1.3rem; letter-spacing: .14em; font-weight: 700; }
+.logo-sub { display: block !important; font-size: .58rem; letter-spacing: .5em; color: var(--kicker); margin: 4px 0 0; font-weight: 600; }
+.logo-sub::after { content: ""; }
+[data-section="portal"] .logo-sub { font-size: 0; }
+[data-section="portal"] .logo-sub::after { content: "UNIVERSO"; font-size: .58rem; }
+.menu a {
+  font-family: var(--f-display); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; font-size: .82rem;
+  color: var(--muted); position: relative;
+}
+.menu > li > a:not(.btn) { padding: .5rem .1rem; }
+.menu > li > a:not(.btn)::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--grad);
+  transform: scaleX(0); transform-origin: left; transition: transform .3s;
+}
+.menu > li > a:hover::after, .menu > li > a.active::after { transform: scaleX(1); }
+.menu > li > a.active { box-shadow: none; color: var(--text); }
+.subnav { background: rgba(10, 11, 18, .6); }
+.subnav a { font-family: var(--f-display); text-transform: uppercase; letter-spacing: .08em; font-size: .76rem; }
+.subnav a.active { color: var(--kicker); }
+
+/* ---------- Botões ---------- */
+.btn { font-family: var(--f-display); font-style: italic; font-weight: 700; letter-spacing: .02em; border-radius: 10px; }
+.btn-lg { padding: 15px 30px; font-size: 1.05rem; }
+.btn-primary { background: var(--grad); color: #fff; box-shadow: var(--btn-shadow); border: 0; }
+.btn-primary:hover { box-shadow: var(--glow); filter: brightness(1.08); }
+.btn-ghost { background: rgba(8, 8, 16, .55); border: 1px solid var(--border-2); color: var(--text); backdrop-filter: blur(4px); }
+.btn-ghost:hover { background: rgba(255, 255, 255, .1); border-color: var(--accent); }
+:root[data-theme="light"] .btn-ghost { background: #fff; }
+
+/* ---------- Cartões ---------- */
+.card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); backdrop-filter: none; }
+.card:hover, a.card:hover { border-color: var(--accent); box-shadow: var(--glow); }
+.icon { background: var(--chip-bg); border-color: var(--chip-bd); color: var(--chip-tx); border-radius: 14px; }
+.tag, .status, .chip {
+  background: var(--chip-bg); color: var(--chip-tx); border: 1px solid var(--chip-bd); border-radius: 999px;
+  font-size: .74rem; font-weight: 600;
+}
+.status-ativo { background: rgba(61, 220, 151, .14); color: #3ddc97; border-color: rgba(61, 220, 151, .45); }
+.status-prot-tipo { background: rgba(255, 176, 59, .12); color: #ffb03b; border-color: rgba(255, 176, 59, .4); }
+.status-em-breve { background: rgba(255, 255, 255, .06); color: var(--muted); border-color: var(--border-2); }
+.step { background: var(--grad-h); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.values li::before { color: var(--accent); }
+
+/* Cartão com capa (padrão gcard do Games) */
+.card.midia { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+.midia-capa { position: relative; display: block; aspect-ratio: 16 / 9; overflow: hidden; background: var(--bg-2); }
+.midia-capa img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
+.card.midia:hover .midia-capa img { transform: scale(1.07); }
+.midia-capa .status { position: absolute; left: .8rem; bottom: .8rem; margin: 0; background: rgba(10, 11, 18, .78); backdrop-filter: blur(6px); }
+.midia-corpo { display: block; padding: 1.1rem 1.3rem 1.4rem; }
+.midia-corpo h3 { margin: 0 0 .4rem; font-size: 1.25rem; }
+.midia-corpo p { color: var(--muted); margin: 0; }
+
+/* Capas dos projetos (portfólio) */
+.project-thumb.com-capa { background: var(--bg-2); padding: 0; }
+.project-thumb.com-capa img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
+.project:hover .project-thumb.com-capa img { transform: scale(1.07); }
+.project-thumb.com-capa .ico { position: relative; z-index: 1; width: 44px; height: 44px; opacity: .9; }
+
+/* Números */
+.stat { background: var(--card); border-color: var(--border); }
+.stat strong { background: var(--grad-h); -webkit-background-clip: text; background-clip: text; color: transparent; font-family: var(--f-display); font-style: italic; font-weight: 800; }
+
+/* ---------- Carrossel da página inicial ---------- */
+.hero-carrossel { position: relative; min-height: calc(100svh - 72px); padding: 0; display: block; overflow: hidden; }
+.slides { position: absolute; inset: 0; }
+.slide {
+  position: absolute; inset: 0; display: flex; align-items: center; opacity: 0; visibility: hidden;
+  transition: opacity .9s ease, visibility .9s;
+  background: linear-gradient(90deg, rgba(10, 11, 18, .94) 0%, rgba(10, 11, 18, .6) 50%, rgba(10, 11, 18, .15) 100%),
+              linear-gradient(0deg, var(--bg) 0%, transparent 30%), var(--img) center / cover no-repeat;
+}
+.slide.ativo { opacity: 1; visibility: visible; }
+/* sem preenchimento "both": se a animação não rodar, o texto aparece normalmente */
+.slide.ativo .slide-texto > * { animation: subir .8s ease-out; }
+@keyframes subir { from { opacity: 0; transform: translateY(24px); } }
+.slide-texto { padding-block: 4rem 6rem; color: #fff; }
+.slide h1, .slide-titulo { font-size: clamp(2.3rem, 4.6vw, 4.2rem); line-height: 1.02; max-width: 17ch; color: #fff; margin: .4rem 0 1rem; }
+.slide-sub { font-size: clamp(1.05rem, 2vw, 1.35rem); color: #d7dceb; max-width: 40ch; margin-bottom: 2rem; font-weight: 300; }
+.carrossel-seta {
+  position: absolute; bottom: 14px; z-index: 3; width: 44px; height: 44px; border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, .25); background: rgba(10, 11, 18, .55); color: #fff; display: grid; place-items: center;
+  cursor: pointer; backdrop-filter: blur(6px); transition: background .2s, border-color .2s;
+}
+.carrossel-seta:hover { background: var(--grad); border-color: transparent; }
+.carrossel-seta.anterior { right: 76px; } .carrossel-seta.anterior .ico { rotate: 180deg; }
+.carrossel-seta.proximo { right: 24px; }
+.carrossel-pontos { position: absolute; left: 50%; bottom: 28px; translate: -50% 0; z-index: 3; display: flex; gap: 10px; }
+.carrossel-pontos button { width: 34px; height: 5px; border-radius: 4px; border: 0; background: rgba(255, 255, 255, .3); cursor: pointer; transition: background .3s, width .3s; }
+.carrossel-pontos button[aria-selected="true"] { background: var(--grad); width: 54px; }
+
+/* ---------- Topo das páginas internas (padrão page-head do Games) ---------- */
+.page-hero { text-align: left; padding: 72px 0 36px; border-bottom: 1px solid var(--border); background: linear-gradient(180deg, var(--bg-2), transparent); margin-bottom: 24px; }
+.page-hero p { margin-inline: 0; }
+.page-hero h1 { font-size: clamp(2.2rem, 6vw, 3.8rem); }
+.page-hero .icon, .case-hero-icon { margin: 0 0 16px; }
+
+/* ---------- Seções e rodapé ---------- */
+.section.aurora::before { opacity: .35; }
+.cta { background: radial-gradient(circle at 80% 0%, rgba(143, 61, 255, .3), transparent 60%), radial-gradient(circle at 10% 110%, rgba(229, 36, 43, .22), transparent 60%), var(--bg-2); }
+[data-section="studio"] .cta { background: radial-gradient(circle at 80% 0%, rgba(139, 92, 246, .3), transparent 60%), radial-gradient(circle at 10% 110%, rgba(47, 123, 255, .22), transparent 60%), var(--bg-2); }
+.footer { background: #07080d; border-top: 1px solid var(--border); }
+:root[data-theme="light"] .footer { background: var(--bg-2); }
+.footer .footer-h { font-family: var(--f-display); color: var(--text); }
+.faq-item { background: var(--card); }
+.faq-item summary::after { color: var(--accent); }
+.filter.active, .filter:hover { background: var(--grad); border-color: transparent; }
+.choice input:checked + span { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; background: var(--chip-bg); }
+.fab-chat { background: var(--grad); }
+.timeline::before { background: var(--grad-h); }
+.timeline li::before { border-color: var(--accent); box-shadow: 0 0 12px var(--accent); }
+.timeline .when { color: var(--kicker); }
+
+@media (max-width: 1000px) {
+  .menu a { font-size: .95rem; }
+  .menu > li > a:not(.btn) { padding: 14px 24px; }
+  .menu > li > a:not(.btn)::after { left: 24px; right: auto; width: 40px; }
+}
+@media (max-width: 640px) {
+  .hero-carrossel { min-height: 640px; }
+  .slide h1, .slide-titulo { font-size: 2.15rem; }
+  .slide-sub { font-size: 1rem; margin-bottom: 1.4rem; }
+  .slide .hero-actions .btn { flex: 1 1 100%; }
+  .slide { background: linear-gradient(0deg, rgba(10, 11, 18, .97) 25%, rgba(10, 11, 18, .45) 100%), var(--img) 65% center / cover no-repeat; align-items: flex-end; }
+  .slide-texto { padding-block: 2rem 5rem; }
+  .carrossel-seta { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .slide { transition: none; }
+}
+
+/* Topo do Studio com arte de capa */
+.hero-studio {
+  min-height: min(78svh, 720px);
+  background: linear-gradient(90deg, rgba(10, 11, 18, .94) 0%, rgba(10, 11, 18, .55) 55%, rgba(10, 11, 18, .1) 100%),
+              linear-gradient(0deg, var(--bg) 0%, transparent 30%), url(/assets/arte/studio.jpg) center / cover no-repeat;
+}
+.hero-studio .holo-planet { display: none; }
+.hero-studio .hero-grid { grid-template-columns: 1fr; }
+.hero-studio h1 { font-size: clamp(2.6rem, 6.5vw, 5rem); color: #fff; max-width: 14ch; }
+.hero-studio .hero-copy > p { color: #d7dceb; }

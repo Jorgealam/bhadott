@@ -1,61 +1,72 @@
-<!--{"title":"BHADOTT | Games, Apps, Sistemas e Inteligência Artificial","description":"BHADOTT é um universo de tecnologia criado no Brasil: jogos, aplicativos, sistemas, IA e produção 3D. Explore o sistema solar e conheça o BHADOTT Studio.","section":"portal"}-->
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <span class="eyebrow" data-i18n="home.eyebrow">Games · AI · Creative Technology</span>
-          <h1 data-i18n-html="home.title">Um universo de tecnologia <span class="sun-text">orbitando a sua ideia</span>.</h1>
-          <p data-i18n="home.lead">A BHADOTT cria jogos, aplicativos, sistemas e inteligência artificial. Clique em um planeta para explorar cada mundo.</p>
-          <div class="hero-actions">
-            <a href="/studio/orcamento.html" class="btn btn-primary magnetic" data-i18n="home.cta1">Começar um projeto</a>
-            <a href="/studio/" class="btn btn-ghost magnetic" data-i18n="home.cta2">Explorar o Studio</a>
+<!--{"title":"BHADOTT | Games, Apps, Sistemas e Inteligência Artificial","description":"BHADOTT é um universo de tecnologia criado no Brasil: jogos, aplicativos, sistemas, IA e produção 3D. Explore o sistema solar e conheça o BHADOTT Studio.","section":"portal","scripts":["/js/carrossel.js"]}-->
+    <section class="hero hero-carrossel" aria-roledescription="carrossel" aria-label="Destaques do universo BHADOTT">
+      <div class="slides">
+        <article class="slide ativo" style="--img:url('/assets/arte/universo.jpg')" aria-roledescription="slide" aria-label="1 de 5">
+          <div class="container slide-texto">
+            <p class="eyebrow" data-i18n="home.eyebrow">Games · AI · Creative Technology</p>
+            <h1 data-i18n-html="home.title">Um universo de tecnologia <span class="sun-text">orbitando a sua ideia</span>.</h1>
+            <p class="slide-sub" data-i18n="home.lead">A BHADOTT cria jogos, aplicativos, sistemas e inteligência artificial — do protótipo ao lançamento.</p>
+            <div class="hero-actions">
+              <a href="/studio/orcamento.html" class="btn btn-primary btn-lg magnetic" data-i18n="home.cta1">Começar um projeto</a>
+              <a href="/studio/" class="btn btn-ghost btn-lg magnetic" data-i18n="home.cta2">Explorar o Studio</a>
+            </div>
           </div>
-          <p class="hint" data-i18n="home.hint">Dica: passe o mouse nos planetas e clique no Sol.</p>
-        </div>
-        <div class="solar-wrap">
-          <div class="solar" role="navigation" aria-label="Sistema solar BHADOTT: cada planeta é um serviço">
-            <div class="orbit" style="--d:30%;--t:12s"><a class="planet mercurio" href="/recursos.html" data-name="Materiais grátis" aria-label="Materiais grátis"></a></div>
-            <div class="orbit" style="--d:39%;--t:22s"><a class="planet venus" href="/studio/servicos/sites-portais.html" data-name="Sites e Portais" aria-label="Sites e Portais"></a></div>
-            <div class="orbit" style="--d:49%;--t:36s"><a class="planet terra" href="/studio/servicos/aplicativos.html" data-name="Aplicativos" aria-label="Aplicativos"><i class="lua"></i></a></div>
-            <div class="orbit" style="--d:58%;--t:52s"><a class="planet marte" href="/games/" data-name="Bhadott Games" aria-label="Bhadott Games"></a></div>
-            <div class="orbit cinturao" style="--d:66%;--t:150s"></div>
-            <div class="orbit" style="--d:75%;--t:80s"><a class="planet jupiter" href="/studio/servicos/sistemas.html" data-name="Sistemas e SaaS" aria-label="Sistemas e SaaS"></a></div>
-            <div class="orbit" style="--d:84%;--t:110s"><a class="planet saturno" href="/studio/servicos/audiovisual-3d.html" data-name="Audiovisual e 3D" aria-label="Audiovisual e 3D"></a></div>
-            <div class="orbit" style="--d:92%;--t:145s"><a class="planet urano" href="/studio/portfolio.html" data-name="Portfólio" aria-label="Portfólio"></a></div>
-            <div class="orbit" style="--d:100%;--t:190s"><a class="planet netuno" href="/studio/servicos/ia-automacao.html" data-name="IA e Automação" aria-label="IA e Automação"></a></div>
-            <button class="sun" aria-label="Sol BHADOTT — clique para uma erupção solar"><span class="corona"></span></button>
+        </article>
+        <article class="slide" style="--img:url('/games/img/games/planetario-bhadock-banner.jpg')" aria-roledescription="slide" aria-label="2 de 5">
+          <div class="container slide-texto">
+            <p class="eyebrow">Bhadott Games · Novo</p>
+            <h2 class="slide-titulo">Planetário <span class="sun-text">3D</span></h2>
+            <p class="slide-sub">Gire o sistema solar, aproxime os planetas e veja a ficha de cada astro — direto no navegador.</p>
+            <div class="hero-actions"><a href="/games/planetario.html" class="btn btn-primary btn-lg">Explorar o Universo</a></div>
           </div>
-        </div>
+        </article>
+        <article class="slide" style="--img:url('/assets/arte/aura.jpg')" aria-roledescription="slide" aria-label="3 de 5">
+          <div class="container slide-texto">
+            <p class="eyebrow">Inteligência artificial</p>
+            <h2 class="slide-titulo">Conheça a <span class="sun-text">AURA</span></h2>
+            <p class="slide-sub">A IA da BHADOTT Studio: conversa por voz, gera imagens e tem um núcleo holográfico. Ela também atende aqui no canto da tela.</p>
+            <div class="hero-actions"><a href="/studio/cases/aura.html" class="btn btn-primary btn-lg">Ver a AURA</a><button class="btn btn-ghost btn-lg" data-abrir-aura>Falar com ela</button></div>
+          </div>
+        </article>
+        <article class="slide" style="--img:url('/games/img/heros/heros01.jpg')" aria-roledescription="slide" aria-label="4 de 5">
+          <div class="container slide-texto">
+            <p class="eyebrow">Bhadott Games</p>
+            <h2 class="slide-titulo">Seu universo de <span class="sun-text">diversão</span></h2>
+            <p class="slide-sub">Catálogo, loja demonstrativa e os mundos que estamos criando em Godot.</p>
+            <div class="hero-actions"><a href="/games/" class="btn btn-primary btn-lg">Explorar jogos</a></div>
+          </div>
+        </article>
+        <article class="slide" style="--img:url('/assets/arte/studio.jpg')" aria-roledescription="slide" aria-label="5 de 5">
+          <div class="container slide-texto">
+            <p class="eyebrow">BHADOTT Studio</p>
+            <h2 class="slide-titulo">Onde as ideias <span class="sun-text">ganham órbita</span></h2>
+            <p class="slide-sub">Jogos, aplicativos, sistemas, sites e IA sob medida, com escopo claro e testes em cada etapa.</p>
+            <div class="hero-actions"><a href="/studio/orcamento.html" class="btn btn-primary btn-lg">Simular orçamento</a><a href="/studio/portfolio.html" class="btn btn-ghost btn-lg">Ver portfólio</a></div>
+          </div>
+        </article>
       </div>
-      <a class="scroll-down" href="#mundos" aria-label="Rolar para baixo"><span></span></a>
+      <button class="carrossel-seta anterior" aria-label="Destaque anterior"><svg class="ico"><use href="/assets/icons.svg#seta"/></svg></button>
+      <button class="carrossel-seta proximo" aria-label="Próximo destaque"><svg class="ico"><use href="/assets/icons.svg#seta"/></svg></button>
+      <div class="carrossel-pontos" role="tablist" aria-label="Escolher destaque"></div>
     </section>
 
     <section class="section" id="mundos">
       <div class="container">
-        <span class="eyebrow">Divisões</span>
-        <h2 class="section-title" data-i18n="home.div.title">Os mundos da BHADOTT</h2>
-        <p class="section-sub" data-i18n="home.div.sub">Cada divisão é um planeta orbitando o mesmo propósito: transformar ideias em produtos digitais que funcionam na vida real.</p>
-        <div class="grid grid-3 worlds">
-          <a class="card world reveal" href="/studio/" style="--hue:220"><span class="world-orb"></span><h3>BHADOTT Studio</h3><p>Jogos, aplicativos, sistemas, sites e IA sob medida. A divisão que constrói.</p><span class="status status-ativo">Ativo</span></a>
-          <a class="card world reveal" href="/studio/cases/bhadott-agro.html" style="--hue:140"><span class="world-orb"></span><h3>BHADOTT Agro</h3><p>Gestão rural: produção, estoque, financeiro e rebanho, com acesso remoto.</p><span class="status status-em-desenvolvimento">Em desenvolvimento</span></a>
-          <a class="card world reveal" href="/studio/cases/aura.html" style="--hue:195"><span class="world-orb"></span><h3>AURA</h3><p>Assistente pessoal com IA, voz ao vivo e núcleo holográfico.</p><span class="status status-em-desenvolvimento">Em desenvolvimento</span></a>
-          <a class="card world reveal" href="/games/" style="--hue:25"><span class="world-orb"></span><h3>Bhadott Games</h3><p>Catálogo, loja demonstrativa e o Planetário 3D. Nos bastidores, FATHOMFIELD e outros mundos em Godot.</p><span class="status status-prot-tipo">Protótipos</span></a>
-          <a class="card world reveal" href="/studio/cases/bhadott-video.html" style="--hue:270"><span class="world-orb"></span><h3>BHADOTT Video</h3><p>Criação de vídeo com IA: roteiro, narração e imagens.</p><span class="status status-planejamento">Planejamento</span></a>
-          <a class="card world reveal" href="/recursos.html" style="--hue:45"><span class="world-orb"></span><h3>BHADOTT Academy</h3><p>Cursos, tutoriais e e-books. Os primeiros materiais já estão disponíveis.</p><span class="status status-em-breve">Em breve</span></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section tight">
-      <div class="container">
-        <a class="feature-planetario reveal" href="/games/planetario.html">
-          <img src="/games/img/games/planetario-bhadock-banner.jpg" alt="Planetário Bhadock: sistema solar em 3D no navegador" loading="lazy" width="1200" height="600" />
-          <div class="feature-texto">
-            <span class="eyebrow">Bhadott Games · Novo</span>
-            <h2>Planetário 3D</h2>
-            <p>Gire o sistema solar, aproxime os planetas e veja a ficha de cada astro — direto no navegador.</p>
-            <span class="btn btn-primary">Explorar o Universo →</span>
+        <div class="sec-head">
+          <div>
+            <span class="eyebrow">Divisões</span>
+            <h2 class="section-title" data-i18n="home.div.title">Os mundos da BHADOTT</h2>
+            <p class="section-sub" data-i18n="home.div.sub">Cada divisão é um planeta orbitando o mesmo propósito: transformar ideias em produtos digitais que funcionam na vida real.</p>
           </div>
-        </a>
+        </div>
+        <div class="grid grid-3 worlds">
+          <a class="card midia reveal" href="/studio/"><span class="midia-capa"><img src="/assets/arte/studio.jpg" alt="" loading="lazy" width="1600" height="900" /><span class="status status-ativo">Ativo</span></span><span class="midia-corpo"><h3>BHADOTT Studio</h3><p>Jogos, aplicativos, sistemas, sites e IA sob medida. A divisão que constrói.</p></span></a>
+          <a class="card midia reveal" href="/games/"><span class="midia-capa"><img src="/games/img/heros/heros01.jpg" alt="" loading="lazy" width="1600" height="900" /><span class="status status-prot-tipo">Protótipos</span></span><span class="midia-corpo"><h3>Bhadott Games</h3><p>Catálogo, loja demonstrativa e o Planetário 3D. Nos bastidores, FATHOMFIELD e outros mundos em Godot.</p></span></a>
+          <a class="card midia reveal" href="/studio/cases/aura.html"><span class="midia-capa"><img src="/assets/arte/aura.jpg" alt="" loading="lazy" width="1600" height="900" /><span class="status status-em-desenvolvimento">Em desenvolvimento</span></span><span class="midia-corpo"><h3>AURA</h3><p>Assistente pessoal com IA, voz ao vivo e núcleo holográfico.</p></span></a>
+          <a class="card midia reveal" href="/studio/cases/bhadott-agro.html"><span class="midia-capa"><img src="/assets/arte/agro.jpg" alt="" loading="lazy" width="1600" height="900" /><span class="status status-em-desenvolvimento">Em desenvolvimento</span></span><span class="midia-corpo"><h3>BHADOTT Agro</h3><p>Gestão rural: produção, estoque, financeiro e rebanho, com acesso remoto.</p></span></a>
+          <a class="card midia reveal" href="/studio/cases/bhadott-video.html"><span class="midia-capa"><img src="/assets/arte/video.jpg" alt="" loading="lazy" width="1600" height="900" /><span class="status status-planejamento">Planejamento</span></span><span class="midia-corpo"><h3>BHADOTT Video</h3><p>Criação de vídeo com IA: roteiro, narração e imagens.</p></span></a>
+          <a class="card midia reveal" href="/recursos.html"><span class="midia-capa"><img src="/assets/arte/academy.jpg" alt="" loading="lazy" width="1600" height="900" /><span class="status status-em-breve">Em breve</span></span><span class="midia-corpo"><h3>BHADOTT Academy</h3><p>Cursos, tutoriais e e-books. Os primeiros materiais já estão disponíveis.</p></span></a>
+        </div>
       </div>
     </section>
 

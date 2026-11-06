@@ -51,4 +51,35 @@ for (const f of walk(OUT)) {
     if (t !== s) fs.writeFileSync(f, t);
   }
 }
-console.log(`Bhadott Games importado em games/: ${pages.length} páginas`);
+// ---------- Somente BHADOTT: retira terceiros e marcas do ecossistema dela ----------
+const FORA = (p) => /terceiros/i.test(`${p.id} ${p.name} ${p.url} ${p.logo}`) || p.id === "terceiros";
+const jsonPath = path.join(OUT, "data/games.json");
+const dados = JSON.parse(fs.readFileSync(jsonPath, "utf8"));
+for (const p of (dados.partners || []).filter(FORA)) if (p.logo) fs.rmSync(path.join(OUT, p.logo), { force: true });
+dados.partners = (dados.partners || []).filter((p) => !FORA(p));
+for (const m of dados.team || []) if (m.id === "jorge") m.name = "Jorge Alam";
+fs.writeFileSync(jsonPath, JSON.stringify(dados, null, 2) + "\n");
+
+const TEXTOS = {
+  "pt-BR": { "footer.group": "Universo BHADOTT", "partners.sub": "Marcas e empresas que acompanham a Bhadott Games." },
+  "en-US": { "footer.group": "BHADOTT Universe", "partners.sub": "Brands and companies that accompany Bhadott Games." },
+};
+for (const [lang, novos] of Object.entries(TEXTOS)) {
+  const p = path.join(OUT, `lang/${lang}.json`);
+  const t = JSON.parse(fs.readFileSync(p, "utf8"));
+  Object.assign(t, novos);
+  for (const k of Object.keys(t)) if (/^partner\.(terceiros|terceiros)\./.test(k)) delete t[k];
+  fs.writeFileSync(p, JSON.stringify(t, null, 2) + "\n");
+}
+// Rodapé: "Universo BHADOTT" -> link para o portal BHADOTT
+for (const f of fs.readdirSync(OUT).filter((f) => f.endsWith(".html"))) {
+  const p = path.join(OUT, f);
+  const h = fs.readFileSync(p, "utf8").replace(/<a class="bd-group"[\s\S]*?<\/a>/,
+    '<a class="bd-group" href="/" aria-label="Universo BHADOTT"><span data-i18n="footer.group">Universo BHADOTT</span> <i class="bi bi-stars"></i></a>');
+  fs.writeFileSync(p, h);
+}
+// Garantia: nenhuma menção restante
+const sobra = walk(OUT).filter((f) => /\.(html|js|json|css)$/.test(f) && !/vendor/.test(f) && /terceiros/i.test(fs.readFileSync(f, "utf8")));
+if (sobra.length) throw new Error("Ainda há menções à terceiros em: " + sobra.join(", "));
+
+console.log(`Bhadott Games importado em games/: ${pages.length} páginas (sem terceiros)`);

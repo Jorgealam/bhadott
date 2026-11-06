@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><title>arte</title>
+<style>html,body{margin:0;width:1600px;height:900px;overflow:hidden;background:#05060c}canvas{display:block}</style></head>
+<body><canvas id="c" width="1600" height="900"></canvas>
+<script>
+// Ilustrações das capas do portal. Uso: arte.html?tema=aura
+const TEMAS = {
+  universo: { cor: ["#ffd36b", "#ff7a1a", "#c2410c"], neb: ["#8f3dff", "#e5242b"], sol: true },
+  aura:     { cor: ["#e0f2fe", "#38bdf8", "#4c1d95"], neb: ["#0ea5e9", "#8b5cf6"], holo: true },
+  studio:   { cor: ["#dbeafe", "#3b82f6", "#3b0764"], neb: ["#2f7bff", "#8b5cf6"], grade: true },
+  agro:     { cor: ["#dcfce7", "#22c55e", "#14532d"], neb: ["#16a34a", "#eab308"], continentes: true },
+  video:    { cor: ["#fae8ff", "#c026d3", "#3b0764"], neb: ["#a21caf", "#e5242b"], aneis: 3 },
+  academy:  { cor: ["#fef9c3", "#f59e0b", "#78350f"], neb: ["#f59e0b", "#8f3dff"], aneis: 1 },
+  jogos:    { cor: ["#fee2e2", "#ef4444", "#450a0a"], neb: ["#e5242b", "#8f3dff"], aneis: 1 },
+};
+const t = TEMAS[new URLSearchParams(location.search).get("tema")] || TEMAS.universo;
+const c = document.getElementById("c"), x = c.getContext("2d"), W = 1600, H = 900;
+let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+
+// fundo e nebulosas
+x.fillStyle = "#05060c"; x.fillRect(0, 0, W, H);
+const neb = (cx, cy, r, col, a) => { const g = x.createRadialGradient(cx, cy, 0, cx, cy, r); g.addColorStop(0, col + a); g.addColorStop(1, col + "00"); x.fillStyle = g; x.fillRect(0, 0, W, H); };
+neb(1150, 300, 700, t.neb[0], "55"); neb(500, 850, 650, t.neb[1], "40"); neb(1400, 800, 400, t.neb[1], "30");
+// estrelas
+for (let i = 0; i < 900; i++) { const s = rnd() ** 3 * 2.2 + 0.3; x.globalAlpha = 0.3 + rnd() * 0.7; x.fillStyle = rnd() < 0.15 ? "#cfe8ff" : "#fff"; x.beginPath(); x.arc(rnd() * W, rnd() * H, s, 0, 7); x.fill(); }
+x.globalAlpha = 1;
+
+const PX = 1120, PY = 470, R = t.sol ? 190 : 230;
+// brilho externo
+neb(PX, PY, R * 2.4, t.cor[1], "66");
+
+if (t.sol) {
+  // Sol com raios e planetas em órbita
+  for (let i = 0; i < 90; i++) { const a = i / 90 * 6.283, l = R * (1.25 + rnd() * 0.6); x.strokeStyle = "rgba(255,190,80," + (0.08 + rnd() * 0.18) + ")"; x.lineWidth = 2 + rnd() * 4; x.beginPath(); x.moveTo(PX + Math.cos(a) * R, PY + Math.sin(a) * R); x.lineTo(PX + Math.cos(a) * l, PY + Math.sin(a) * l); x.stroke(); }
+  [300, 400, 500, 610].forEach((o, i) => { x.strokeStyle = "rgba(160,170,255,.18)"; x.lineWidth = 1.5; x.beginPath(); x.ellipse(PX, PY, o, o * 0.32, -0.15, 0, 7); x.stroke();
+    const a = 0.8 + i * 1.7, px = PX + Math.cos(a) * o, py = PY + Math.sin(a) * o * 0.32 - Math.sin(-0.15) * Math.cos(a) * o;
+    const pr = [14, 22, 34, 18][i], pc = [["#9fe3ff", "#2b7bd8"], ["#ffb08a", "#c1440e"], ["#f0d9b5", "#b07a4f"], ["#d8fbff", "#6fd3e0"]][i];
+    const g = x.createRadialGradient(px - pr * .4, py - pr * .4, 1, px, py, pr); g.addColorStop(0, pc[0]); g.addColorStop(1, pc[1]); x.fillStyle = g; x.beginPath(); x.arc(px, py, pr, 0, 7); x.fill(); });
+}
+
+// planeta / núcleo
+const g = x.createRadialGradient(PX - R * .35, PY - R * .4, R * .05, PX, PY, R);
+g.addColorStop(0, t.cor[0]); g.addColorStop(0.45, t.cor[1]); g.addColorStop(1, t.cor[2]);
+x.fillStyle = g; x.beginPath(); x.arc(PX, PY, R, 0, 7); x.fill();
+
+x.save(); x.beginPath(); x.arc(PX, PY, R, 0, 7); x.clip();
+if (t.continentes) for (let i = 0; i < 26; i++) { x.fillStyle = "rgba(20,83,45," + (0.25 + rnd() * 0.35) + ")"; x.beginPath(); x.ellipse(PX - R + rnd() * R * 2, PY - R + rnd() * R * 2, 20 + rnd() * 70, 10 + rnd() * 30, rnd() * 3, 0, 7); x.fill(); }
+if (t.grade) { x.strokeStyle = "rgba(219,234,254,.22)"; x.lineWidth = 1.2; for (let i = -6; i <= 6; i++) { x.beginPath(); x.ellipse(PX, PY, Math.abs(i) / 6 * R, R, 0, 0, 7); x.stroke(); x.beginPath(); x.moveTo(PX - R, PY + i / 6 * R); x.lineTo(PX + R, PY + i / 6 * R); x.stroke(); } }
+if (t.holo) { x.fillStyle = "rgba(224,242,254,.12)"; for (let y = PY - R; y < PY + R; y += 7) x.fillRect(PX - R, y, R * 2, 2); }
+// sombra do lado escuro
+const sh = x.createLinearGradient(PX - R, PY - R, PX + R, PY + R); sh.addColorStop(0.45, "rgba(0,0,0,0)"); sh.addColorStop(1, "rgba(0,0,0,.65)");
+x.fillStyle = sh; x.fillRect(PX - R, PY - R, R * 2, R * 2); x.restore();
+
+// anéis
+const anel = (rx, ry, rot, w, col) => { x.strokeStyle = col; x.lineWidth = w; x.beginPath(); x.ellipse(PX, PY, rx, ry, rot, 0, 7); x.stroke(); };
+if (t.holo) { anel(R * 1.55, R * .42, -0.35, 4, "rgba(147,197,253,.75)"); anel(R * 1.4, R * .38, 0.5, 3, "rgba(196,181,253,.6)"); anel(R * 1.75, R * .5, 0.1, 2, "rgba(232,121,249,.45)"); }
+for (let i = 0; i < (t.aneis || 0); i++) anel(R * (1.45 + i * .18), R * (.34 + i * .05), -0.28, 10 - i * 3, `rgba(255,255,255,${0.35 - i * 0.08})`);
+if (t.grade) anel(R * 1.5, R * .4, -0.3, 3, "rgba(147,197,253,.6)");
+
+// vinheta à esquerda para o texto
+const v = x.createLinearGradient(0, 0, W, 0); v.addColorStop(0, "rgba(5,6,12,.85)"); v.addColorStop(0.45, "rgba(5,6,12,.35)"); v.addColorStop(0.7, "rgba(5,6,12,0)");
+x.fillStyle = v; x.fillRect(0, 0, W, H);
+</script></body></html>

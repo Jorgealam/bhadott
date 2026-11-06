@@ -26,6 +26,11 @@ const fmtDate = (d) => new Date(d + "T12:00:00").toLocaleDateString("pt-BR", { d
 const tags = (list) => list.map((t) => `<span class="tag">${esc(t)}</span>`).join("");
 const statusBadge = (s) => `<span class="status status-${s.toLowerCase().replace(/[^a-z]+/g, "-")}">${esc(s)}</span>`;
 
+// Capa do projeto: imagem quando houver (data/cases.json > capa), senão o ícone
+const thumb = (c) => c.capa
+  ? `<div class="project-thumb com-capa" style="--hue:${c.hue}"><img src="${c.capa}" alt="" loading="lazy" width="1600" height="900" /></div>`
+  : `<div class="project-thumb" style="--hue:${c.hue}"><svg class="ico ico-xl"><use href="/assets/icons.svg#${c.icone}"/></svg></div>`;
+
 const blocks = {
   posts_cards: data.posts.map((p) => `
         <article class="card post reveal" data-cat="${esc(p.categoria)}" data-search="${esc((p.titulo + " " + p.resumo + " " + p.categoria).toLowerCase())}">
@@ -42,14 +47,14 @@ const blocks = {
     .map((c) => `<button class="filter" data-filter="${esc(c)}">${esc(c)}</button>`).join(""),
   cases_cards: data.cases.map((c) => `
           <article class="card project reveal" data-cat="${esc(c.filtro)}">
-            <div class="project-thumb" style="--hue:${c.hue}"><svg class="ico ico-xl"><use href="/assets/icons.svg#${c.icone}"/></svg></div>
+            ${thumb(c)}
             ${statusBadge(c.status)} ${tags(c.tags)}
             <h3><a href="/studio/cases/${c.slug}.html">${esc(c.nome)}</a></h3>
             <p>${esc(c.resumo)}</p>
           </article>`).join(""),
   cases_featured: data.cases.filter((c) => c.destaque).map((c) => `
           <a class="card project reveal" href="/studio/cases/${c.slug}.html">
-            <div class="project-thumb" style="--hue:${c.hue}"><svg class="ico ico-xl"><use href="/assets/icons.svg#${c.icone}"/></svg></div>
+            ${thumb(c)}
             ${statusBadge(c.status)}<h3>${esc(c.nome)}</h3><p>${esc(c.resumo)}</p></a>`).join(""),
   servicos_cards: data.servicos.map((s) => `
           <a class="card service reveal" href="/studio/servicos/${s.slug}.html">
@@ -167,7 +172,7 @@ fs.writeFileSync(path.join(OUT, "sitemap.xml"),
 
 if (!DEV) {
   const run = (cmd) => execSync(cmd, { stdio: "inherit" });
-  run(`npx --yes lightningcss-cli@1.25.1 --minify css/style.css -o ${OUT}/css/style.css`);
+  for (const f of ["style.css", "tema-bhadott.css"]) run(`npx --yes lightningcss-cli@1.25.1 --minify css/${f} -o ${OUT}/css/${f}`);
   for (const f of fs.readdirSync("js")) run(`npx --yes terser@5.31.0 js/${f} -c -m -o ${OUT}/js/${f}`);
 }
 

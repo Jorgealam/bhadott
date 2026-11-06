@@ -232,23 +232,9 @@
     {
       "id": "terceiros",
       "name": "terceiros",
-      "logo": "img/partners/removido.png",
-      "url": "/",
-      "official": true
-    },
-    {
-      "id": "terceiros",
-      "name": "terceiros",
       "logo": "",
       "url": "",
       "official": false
-    },
-    {
-      "id": "terceiros",
-      "name": "terceiros",
-      "logo": "img/partners/removido.png",
-      "url": "/",
-      "official": true
     }
   ],
   "team": [
@@ -261,7 +247,7 @@
     },
     {
       "id": "jorge",
-      "name": "Jorge Alan",
+      "name": "Jorge Alam",
       "roleKey": "team.jorge.role",
       "photo": "img/team/avatar-placeholder.svg",
       "provisional": true
