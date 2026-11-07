@@ -32,7 +32,7 @@ console.log("Imagem:", path.relative(".", og), `${Math.round(fs.statSync(og).siz
 // Capas ilustradas das áreas do portal (assets/arte/<tema>.png)
 const ARTE = path.resolve("assets/arte");
 fs.mkdirSync(ARTE, { recursive: true });
-for (const tema of ["universo", "aura", "studio", "agro", "video", "academy", "jogos"]) {
+for (const tema of ["universo", "aura", "studio", "agro", "video", "academy", "jogos", "apps", "sistemas", "sites", "carreira", "contato"]) {
   const out = path.join(ARTE, tema + ".png");
   run([`--screenshot=${out}`, "--window-size=1600,900", "--hide-scrollbars", pathToFileURL(path.join(SRC, "arte.html")).href + "?tema=" + tema]);
   console.log("Arte:", path.relative(".", out), `${Math.round(fs.statSync(out).size / 1024)} KB`);

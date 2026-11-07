@@ -12,6 +12,11 @@ const TEMAS = {
   video:    { cor: ["#fae8ff", "#c026d3", "#3b0764"], neb: ["#a21caf", "#e5242b"], aneis: 3 },
   academy:  { cor: ["#fef9c3", "#f59e0b", "#78350f"], neb: ["#f59e0b", "#8f3dff"], aneis: 1 },
   jogos:    { cor: ["#fee2e2", "#ef4444", "#450a0a"], neb: ["#e5242b", "#8f3dff"], aneis: 1 },
+  apps:     { cor: ["#ccfbf1", "#14b8a6", "#134e4a"], neb: ["#0d9488", "#2f7bff"], holo: true },
+  sistemas: { cor: ["#e0e7ff", "#6366f1", "#1e1b4b"], neb: ["#4f46e5", "#0ea5e9"], grade: true },
+  sites:    { cor: ["#cffafe", "#06b6d4", "#164e63"], neb: ["#0891b2", "#8b5cf6"], aneis: 2 },
+  carreira: { cor: ["#ffedd5", "#f97316", "#7c2d12"], neb: ["#ea580c", "#8f3dff"], continentes: true },
+  contato:  { cor: ["#fce7f3", "#ec4899", "#500724"], neb: ["#db2777", "#2f7bff"], aneis: 1 },
 };
 const t = TEMAS[new URLSearchParams(location.search).get("tema")] || TEMAS.universo;
 const c = document.getElementById("c"), x = c.getContext("2d"), W = 1600, H = 900;

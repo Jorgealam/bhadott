@@ -78,6 +78,32 @@ for (const f of fs.readdirSync(OUT).filter((f) => f.endsWith(".html"))) {
     '<a class="bd-group" href="/" aria-label="Universo BHADOTT"><span data-i18n="footer.group">Universo BHADOTT</span> <i class="bi bi-stars"></i></a>');
   fs.writeFileSync(p, h);
 }
+// ---------- Por enquanto: sem parceiros e equipe só com o fundador ----------
+const d2 = JSON.parse(fs.readFileSync(jsonPath, "utf8"));
+for (const p of d2.partners || []) if (p.logo) fs.rmSync(path.join(OUT, p.logo), { force: true });
+d2.partners = [];
+d2.team = (d2.team || []).filter((m) => m.id === "jorge");
+fs.writeFileSync(jsonPath, JSON.stringify(d2, null, 2) + "\n");
+const EQUIPE = {
+  "pt-BR": { "team.jorge.role": "Fundador e Criador de Projetos Digitais" },
+  "en-US": { "team.jorge.role": "Founder and Creator of Digital Projects" },
+};
+for (const [lang, novos] of Object.entries(EQUIPE)) {
+  const p = path.join(OUT, `lang/${lang}.json`);
+  const t = JSON.parse(fs.readFileSync(p, "utf8"));
+  Object.assign(t, novos);
+  for (const k of Object.keys(t)) if (/^(team\.integrante|partner\.)/.test(k)) delete t[k];
+  fs.writeFileSync(p, JSON.stringify(t, null, 2) + "\n");
+}
+fs.rmSync(path.join(OUT, "parceiros.html"), { force: true });
+for (const f of fs.readdirSync(OUT).filter((f) => f.endsWith(".html"))) {
+  const p = path.join(OUT, f);
+  const h = fs.readFileSync(p, "utf8")
+    .replace(/\s*<li class="nav-item"><a class="nav-link" data-nav="partners"[^>]*>[^<]*<\/a><\/li>/, "")
+    .replace(/\s*<a href="\/games\/parceiros\.html"[^>]*>[^<]*<\/a>/g, "");
+  fs.writeFileSync(p, h);
+}
+
 // Garantia: nenhuma menção restante
 const sobra = walk(OUT).filter((f) => /\.(html|js|json|css)$/.test(f) && !/vendor/.test(f) && /terceiros/i.test(fs.readFileSync(f, "utf8")));
 if (sobra.length) throw new Error("Ainda há menções à terceiros em: " + sobra.join(", "));

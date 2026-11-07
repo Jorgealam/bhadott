@@ -31,18 +31,23 @@ const thumb = (c) => c.capa
   ? `<div class="project-thumb com-capa" style="--hue:${c.hue}"><img src="${c.capa}" alt="" loading="lazy" width="1600" height="900" /></div>`
   : `<div class="project-thumb" style="--hue:${c.hue}"><svg class="ico ico-xl"><use href="/assets/icons.svg#${c.icone}"/></svg></div>`;
 
+// Capas das páginas geradas (assets/arte/*.jpg)
+const ARTE_CATEGORIA = { "Jogos": "jogos", "Inteligência Artificial": "aura", "Aplicativos": "apps", "Novidades": "universo" };
+const capaPost = (p) => `/assets/arte/${ARTE_CATEGORIA[p.categoria] || "universo"}.jpg`;
+const capaMidia = (src, extra = "") => `<span class="midia-capa"><img src="${src}" alt="" loading="lazy" width="1600" height="900" />${extra}</span>`;
+
 const blocks = {
   posts_cards: data.posts.map((p) => `
-        <article class="card post reveal" data-cat="${esc(p.categoria)}" data-search="${esc((p.titulo + " " + p.resumo + " " + p.categoria).toLowerCase())}">
-          <span class="tag">${esc(p.categoria)}</span>
-          <h3><a href="/blog/${p.slug}.html">${esc(p.titulo)}</a></h3>
-          <p>${esc(p.resumo)}</p>
-          <p class="post-meta"><time datetime="${p.data}">${fmtDate(p.data)}</time> · ${p.leitura} min de leitura</p>
-        </article>`).join(""),
+        <a class="card midia post reveal" href="/blog/${p.slug}.html" data-cat="${esc(p.categoria)}" data-search="${esc((p.titulo + " " + p.resumo + " " + p.categoria).toLowerCase())}">
+          ${capaMidia(capaPost(p), `<span class="status">${esc(p.categoria)}</span>`)}
+          <span class="midia-corpo"><h3>${esc(p.titulo)}</h3><p>${esc(p.resumo)}</p>
+          <span class="post-meta"><time datetime="${p.data}">${fmtDate(p.data)}</time> · ${p.leitura} min de leitura</span></span>
+        </a>`).join(""),
   posts_latest: data.posts.slice(0, 3).map((p) => `
-          <article class="card post reveal"><span class="tag">${esc(p.categoria)}</span>
-            <h3><a href="/blog/${p.slug}.html">${esc(p.titulo)}</a></h3><p>${esc(p.resumo)}</p>
-            <p class="post-meta"><time datetime="${p.data}">${fmtDate(p.data)}</time></p></article>`).join(""),
+          <a class="card midia post reveal" href="/blog/${p.slug}.html">
+            ${capaMidia(capaPost(p), `<span class="status">${esc(p.categoria)}</span>`)}
+            <span class="midia-corpo"><h3>${esc(p.titulo)}</h3><p>${esc(p.resumo)}</p>
+            <span class="post-meta"><time datetime="${p.data}">${fmtDate(p.data)}</time></span></span></a>`).join(""),
   blog_categories: [...new Set(data.posts.map((p) => p.categoria))]
     .map((c) => `<button class="filter" data-filter="${esc(c)}">${esc(c)}</button>`).join(""),
   cases_cards: data.cases.map((c) => `
@@ -57,9 +62,9 @@ const blocks = {
             ${thumb(c)}
             ${statusBadge(c.status)}<h3>${esc(c.nome)}</h3><p>${esc(c.resumo)}</p></a>`).join(""),
   servicos_cards: data.servicos.map((s) => `
-          <a class="card service reveal" href="/studio/servicos/${s.slug}.html">
-            <div class="icon"><svg class="ico"><use href="/assets/icons.svg#${s.icone}"/></svg></div>
-            <h3>${esc(s.nome)}</h3><p>${esc(s.resumo)}</p><span class="more">Saiba mais →</span></a>`).join(""),
+          <a class="card midia service reveal" href="/studio/servicos/${s.slug}.html">
+            ${capaMidia(s.capa, `<span class="icon midia-icone"><svg class="ico"><use href="/assets/icons.svg#${s.icone}"/></svg></span>`)}
+            <span class="midia-corpo"><h3>${esc(s.nome)}</h3><p>${esc(s.resumo)}</p><span class="more">Saiba mais →</span></span></a>`).join(""),
   vagas_cards: data.vagas.map((v) => `
           <div class="card job reveal"><div><h3>${esc(v.titulo)}</h3>${tags([v.modelo, ...v.tags])}<p>${esc(v.resumo)}</p></div>
             <a href="#candidatura" class="btn btn-ghost" data-vaga="${esc(v.titulo)}">Quero colaborar</a></div>`).join(""),
@@ -105,17 +110,19 @@ walk("src/pages");
 // Páginas geradas por modelo
 const tpl = (n) => read(`src/templates/${n}.html`);
 for (const p of data.posts) {
-  addPage(`blog/${p.slug}.html`, render(tpl("post"), { ...p, data_fmt: fmtDate(p.data), conteudo: p.conteudo.join("\n") }),
+  addPage(`blog/${p.slug}.html`, render(tpl("post"), { ...p, capa_url: capaPost(p), data_fmt: fmtDate(p.data), conteudo: p.conteudo.join("\n") }),
     { title: `${p.titulo} | Blog BHADOTT`, description: p.resumo, type: "article", section: "portal" });
 }
 for (const c of data.cases) {
   addPage(`studio/cases/${c.slug}.html`, render(tpl("case"), {
+    capa_url: c.capa || "/assets/arte/studio.jpg",
     ...c, tags_html: tags(c.tags), status_html: statusBadge(c.status),
     destaques: c.destaques.map((d) => `<li>${esc(d)}</li>`).join(""), stack: c.stack.map((s) => `<span class="tech">${esc(s)}</span>`).join(""),
   }), { title: `${c.nome} | Portfólio BHADOTT Studio`, description: c.resumo, section: "studio" });
 }
 for (const s of data.servicos) {
   addPage(`studio/servicos/${s.slug}.html`, render(tpl("servico"), {
+    capa_url: s.capa,
     ...s, entregas: s.entregas.map((e) => `<li>${esc(e)}</li>`).join(""), beneficios: s.beneficios.map((b) => `<div class="card reveal"><h3>${esc(b[0])}</h3><p>${esc(b[1])}</p></div>`).join(""),
   }), { title: `${s.nome} | BHADOTT Studio`, description: s.resumo, section: "studio" });
 }
@@ -163,7 +170,7 @@ fs.writeFileSync(path.join(OUT, "sw.js"), read("sw.js").replace("__VERSION__", v
 
 const urls = pages.filter((p) => !p.meta.noindex).map((p) => "/" + p.out.replace(/index\.html$/, ""));
 // Páginas públicas da área de jogos (as de conta/carrinho ficam fora do Google)
-const GAMES_PUBLIC = ["", "jogos.html", "loja.html", "planetario.html", "gratuitos.html", "promocoes.html", "estudio.html", "parceiros.html", "noticias.html"];
+const GAMES_PUBLIC = ["", "jogos.html", "loja.html", "planetario.html", "gratuitos.html", "promocoes.html", "estudio.html", "noticias.html"];
 if (fs.existsSync("games")) urls.push(...GAMES_PUBLIC.map((p) => "/games/" + p));
 fs.writeFileSync(path.join(OUT, "sitemap.xml"),
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +

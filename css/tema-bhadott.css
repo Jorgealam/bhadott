@@ -235,3 +235,43 @@ a { color: var(--blue-l); }
 .hero-studio .hero-grid { grid-template-columns: 1fr; }
 .hero-studio h1 { font-size: clamp(2.6rem, 6.5vw, 5rem); color: #fff; max-width: 14ch; }
 .hero-studio .hero-copy > p { color: #d7dceb; }
+
+/* ---------- Topo das páginas internas com capa ---------- */
+.page-hero.com-capa {
+  min-height: 340px; display: flex; align-items: flex-end; padding: 96px 0 44px; border-bottom: 1px solid var(--border);
+  background: linear-gradient(90deg, rgba(10, 11, 18, .95) 0%, rgba(10, 11, 18, .7) 50%, rgba(10, 11, 18, .25) 100%),
+              linear-gradient(0deg, var(--bg) 0%, transparent 45%), var(--img) center / cover no-repeat;
+}
+.page-hero.com-capa h1 { color: #fff; }
+.page-hero.com-capa p, .page-hero.com-capa .crumbs, .page-hero.com-capa .crumbs a { color: #d7dceb; }
+.page-hero.com-capa .post-meta { color: #c3cad9; }
+:root[data-theme="light"] .page-hero.com-capa { background: linear-gradient(90deg, rgba(10, 11, 18, .92) 0%, rgba(10, 11, 18, .6) 55%, rgba(10, 11, 18, .2) 100%), var(--img) center / cover no-repeat; }
+.article .page-hero.com-capa .container { width: min(var(--max), 100% - 32px); }
+
+/* Cartões de serviço e de post com capa */
+.midia-icone { position: absolute; right: .8rem; bottom: .8rem; width: 46px; height: 46px; background: rgba(10, 11, 18, .78); backdrop-filter: blur(6px); }
+.card.midia .more { display: inline-block; margin-top: .8rem; color: var(--accent); font-family: var(--f-display); font-style: italic; font-weight: 700; }
+.card.midia .post-meta { display: block; margin-top: .7rem; }
+.card.midia.post .midia-capa { aspect-ratio: 2 / 1; }
+@media (max-width: 640px) { .page-hero.com-capa { min-height: 280px; padding-top: 72px; } }
+
+/* ---------- Tema claro também quando vem do sistema (sem escolha no botão) ---------- */
+.subnav { background: color-mix(in srgb, var(--bg) 88%, transparent); }
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) body { background: var(--bg); }
+  :root:not([data-theme]) .header { background: rgba(243, 244, 249, .92); }
+  :root:not([data-theme]) .btn-ghost { background: #fff; }
+  :root:not([data-theme]) .footer { background: var(--bg-2); }
+  :root:not([data-theme]) .page-hero.com-capa { background: linear-gradient(90deg, rgba(10, 11, 18, .92) 0%, rgba(10, 11, 18, .6) 55%, rgba(10, 11, 18, .2) 100%), var(--img) center / cover no-repeat; }
+}
+/* Botões claros dentro de áreas escuras (carrossel, capas) continuam escuros */
+.slide .btn-ghost, .page-hero.com-capa .btn-ghost, .hero-studio .btn-ghost { background: rgba(8, 8, 16, .55); color: #fff; border-color: rgba(255, 255, 255, .35); }
+/* Subtítulos legíveis no tema claro (fora das áreas com imagem escura) */
+:root[data-theme="light"] { --kicker: #c2410c; }
+:root[data-theme="light"][data-section="studio"] { --kicker: #0e7490; }
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) { --kicker: #c2410c; }
+  :root:not([data-theme])[data-section="studio"] { --kicker: #0e7490; }
+}
+.slide, .page-hero.com-capa, .hero-studio { --kicker: #ff9a2e; }
+[data-section="studio"] .page-hero.com-capa, [data-section="studio"] .hero-studio { --kicker: #3df0ff; }

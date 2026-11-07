@@ -228,23 +228,8 @@
       "img": "news3"
     }
   ],
-  "partners": [
-    {
-      "id": "terceiros",
-      "name": "terceiros",
-      "logo": "",
-      "url": "",
-      "official": false
-    }
-  ],
+  "partners": [],
   "team": [
-    {
-      "id": "integrante",
-      "name": "integrante",
-      "roleKey": "team.integrante.role",
-      "photo": "img/team/avatar-placeholder.svg",
-      "provisional": false
-    },
     {
       "id": "jorge",
       "name": "Jorge Alam",
