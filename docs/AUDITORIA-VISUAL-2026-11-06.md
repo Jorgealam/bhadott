@@ -39,7 +39,12 @@
 3. **Arte própria** para AURA, Studio, Agro, Video, Academy e Universo (ilustrações geradas em código, trocáveis por arte definitiva) ✔
 4. Próximas rodadas: páginas de produto no padrão do Games (galeria, ficha, relacionados); menu único entre portal e jogos
 
-## Pendências que dependem do dono
+## Rodada 2 (07/11/2026)
 
-- **terceiros** ("empresa do grupo") e **integrante** (co-fundador) continuam no Bhadott Games — confirmar se ficam.
+- **Retirados do Bhadott Games:** terceiros, integrante, a página Parceiros e os textos "empresas do grupo". Equipe: só Jorge Alam (Fundador e Criador de Projetos Digitais).
+- **Visual completo em todas as áreas:** capa ilustrada no topo de todas as páginas internas (Sobre, Blog, Materiais, Carreira, Contato, Investidores, Privacidade, Serviços, Portfólio, Tecnologias, Orçamento) e de cada serviço, projeto e post; cartões de serviços e do blog com capa.
+- 12 ilustrações no total (`assets/arte/`), geradas por `node materiais/gerar.mjs`.
+- Tema claro corrigido quando vem da configuração do sistema.
+
+## Pendências que dependem do dono
 - O **histórico do GitHub** ainda guarda o logo da terceiros nas versões antigas; apagar exige reescrever o histórico (decisão do dono).
