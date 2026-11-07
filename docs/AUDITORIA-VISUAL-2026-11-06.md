@@ -12,7 +12,7 @@
 | 4 | Cabeçalho | Menu em texto pequeno, sem o peso visual do Games | — |
 | 5 | Cartões | Planos, sem capa nem zoom ao passar o mouse | — |
 | 6 | Desempenho | Fontes baixadas do Google atrasam a primeira pintura (~3 s no 4G) | Nota 81–86 |
-| 7 | Games | Marcas da terceiros (parceiro, logo, "Universo BHADOTT" no rodapé) | **Corrigido** — somente BHADOTT |
+| 7 | Games | Marcas de terceiros (parceiros, logos e link de grupo no rodapé) | **Corrigido** — somente BHADOTT |
 | 8 | Games | Nome "Jorge Alan" | **Corrigido** para Jorge Alam |
 
 ## Padrão adotado (vindo do Bhadott Games)
@@ -41,10 +41,10 @@
 
 ## Rodada 2 (07/11/2026)
 
-- **Retirados do Bhadott Games:** terceiros, integrante, a página Parceiros e os textos "empresas do grupo". Equipe: só Jorge Alam (Fundador e Criador de Projetos Digitais).
+- **Retirados do Bhadott Games:** parceiros e integrantes de terceiros, a página Parceiros e os textos "empresas do grupo". Equipe: só Jorge Alam (Fundador e Criador de Projetos Digitais).
 - **Visual completo em todas as áreas:** capa ilustrada no topo de todas as páginas internas (Sobre, Blog, Materiais, Carreira, Contato, Investidores, Privacidade, Serviços, Portfólio, Tecnologias, Orçamento) e de cada serviço, projeto e post; cartões de serviços e do blog com capa.
 - 12 ilustrações no total (`assets/arte/`), geradas por `node materiais/gerar.mjs`.
 - Tema claro corrigido quando vem da configuração do sistema.
 
 ## Pendências que dependem do dono
-- O **histórico do GitHub** ainda guarda o logo da terceiros nas versões antigas; apagar exige reescrever o histórico (decisão do dono).
+- Histórico do Git saneado em 07/11/2026 — ver docs/HISTORICO-GIT.md.

@@ -51,61 +51,48 @@ for (const f of walk(OUT)) {
     if (t !== s) fs.writeFileSync(f, t);
   }
 }
-// ---------- Somente BHADOTT: retira terceiros e marcas do ecossistema dela ----------
-const FORA = (p) => /terceiros/i.test(`${p.id} ${p.name} ${p.url} ${p.logo}`) || p.id === "terceiros";
+
+// ---------- Somente BHADOTT ----------
+// Regra genérica, sem citar marcas: nenhum parceiro, equipe só com o fundador e
+// rodapé apontando para o portal. Assim nenhuma marca de terceiros entra no site.
 const jsonPath = path.join(OUT, "data/games.json");
 const dados = JSON.parse(fs.readFileSync(jsonPath, "utf8"));
-for (const p of (dados.partners || []).filter(FORA)) if (p.logo) fs.rmSync(path.join(OUT, p.logo), { force: true });
-dados.partners = (dados.partners || []).filter((p) => !FORA(p));
-for (const m of dados.team || []) if (m.id === "jorge") m.name = "Jorge Alam";
+fs.rmSync(path.join(OUT, "img/partners"), { recursive: true, force: true });
+dados.partners = [];
+dados.team = (dados.team || []).filter((m) => m.id === "jorge").map((m) => ({ ...m, name: "Jorge Alam" }));
 fs.writeFileSync(jsonPath, JSON.stringify(dados, null, 2) + "\n");
 
 const TEXTOS = {
-  "pt-BR": { "footer.group": "Universo BHADOTT", "partners.sub": "Marcas e empresas que acompanham a Bhadott Games." },
-  "en-US": { "footer.group": "BHADOTT Universe", "partners.sub": "Brands and companies that accompany Bhadott Games." },
+  "pt-BR": { "footer.group": "Universo BHADOTT", "partners.sub": "Marcas e empresas que acompanham a Bhadott Games.", "team.jorge.role": "Fundador e Criador de Projetos Digitais" },
+  "en-US": { "footer.group": "BHADOTT Universe", "partners.sub": "Brands and companies that accompany Bhadott Games.", "team.jorge.role": "Founder and Creator of Digital Projects" },
 };
 for (const [lang, novos] of Object.entries(TEXTOS)) {
   const p = path.join(OUT, `lang/${lang}.json`);
   const t = JSON.parse(fs.readFileSync(p, "utf8"));
   Object.assign(t, novos);
-  for (const k of Object.keys(t)) if (/^partner\.(terceiros|terceiros)\./.test(k)) delete t[k];
+  // descrições de parceiros e textos de membros da equipe que não são o fundador
+  for (const k of Object.keys(t)) if (/^partner\./.test(k) || /^team\.(?!jorge\.)[a-z]+\.(role|r\d+)$/.test(k)) delete t[k];
   fs.writeFileSync(p, JSON.stringify(t, null, 2) + "\n");
 }
-// Rodapé: "Universo BHADOTT" -> link para o portal BHADOTT
-for (const f of fs.readdirSync(OUT).filter((f) => f.endsWith(".html"))) {
-  const p = path.join(OUT, f);
-  const h = fs.readFileSync(p, "utf8").replace(/<a class="bd-group"[\s\S]*?<\/a>/,
-    '<a class="bd-group" href="/" aria-label="Universo BHADOTT"><span data-i18n="footer.group">Universo BHADOTT</span> <i class="bi bi-stars"></i></a>');
-  fs.writeFileSync(p, h);
-}
-// ---------- Por enquanto: sem parceiros e equipe só com o fundador ----------
-const d2 = JSON.parse(fs.readFileSync(jsonPath, "utf8"));
-for (const p of d2.partners || []) if (p.logo) fs.rmSync(path.join(OUT, p.logo), { force: true });
-d2.partners = [];
-d2.team = (d2.team || []).filter((m) => m.id === "jorge");
-fs.writeFileSync(jsonPath, JSON.stringify(d2, null, 2) + "\n");
-const EQUIPE = {
-  "pt-BR": { "team.jorge.role": "Fundador e Criador de Projetos Digitais" },
-  "en-US": { "team.jorge.role": "Founder and Creator of Digital Projects" },
-};
-for (const [lang, novos] of Object.entries(EQUIPE)) {
-  const p = path.join(OUT, `lang/${lang}.json`);
-  const t = JSON.parse(fs.readFileSync(p, "utf8"));
-  Object.assign(t, novos);
-  for (const k of Object.keys(t)) if (/^(team\.integrante|partner\.)/.test(k)) delete t[k];
-  fs.writeFileSync(p, JSON.stringify(t, null, 2) + "\n");
-}
+
+// Páginas: sem página de parceiros; link do grupo no rodapé -> portal BHADOTT
 fs.rmSync(path.join(OUT, "parceiros.html"), { force: true });
 for (const f of fs.readdirSync(OUT).filter((f) => f.endsWith(".html"))) {
   const p = path.join(OUT, f);
   const h = fs.readFileSync(p, "utf8")
+    .replace(/<a class="bd-group"[\s\S]*?<\/a>/,
+      '<a class="bd-group" href="/" aria-label="Universo BHADOTT"><span data-i18n="footer.group">Universo BHADOTT</span> <i class="bi bi-stars"></i></a>')
     .replace(/\s*<li class="nav-item"><a class="nav-link" data-nav="partners"[^>]*>[^<]*<\/a><\/li>/, "")
     .replace(/\s*<a href="\/games\/parceiros\.html"[^>]*>[^<]*<\/a>/g, "");
   fs.writeFileSync(p, h);
 }
 
-// Garantia: nenhuma menção restante
-const sobra = walk(OUT).filter((f) => /\.(html|js|json|css)$/.test(f) && !/vendor/.test(f) && /terceiros/i.test(fs.readFileSync(f, "utf8")));
-if (sobra.length) throw new Error("Ainda há menções à terceiros em: " + sobra.join(", "));
+// Garantia: nenhum link para domínios externos fora da lista permitida
+const PERMITIDOS = new Set(["www.w3.org"]);
+const externos = new Set();
+for (const f of walk(OUT).filter((f) => /\.(html|json)$/.test(f)))
+  for (const m of fs.readFileSync(f, "utf8").matchAll(/https?:\/\/([a-z0-9.-]+)/gi))
+    if (!PERMITIDOS.has(m[1].toLowerCase())) externos.add(`${m[1]} em ${path.relative(OUT, f)}`);
+if (externos.size) throw new Error("Links externos não permitidos: " + [...externos].join(", "));
 
-console.log(`Bhadott Games importado em games/: ${pages.length} páginas (sem terceiros)`);
+console.log(`Bhadott Games importado em games/: ${pages.length} páginas (somente BHADOTT)`);

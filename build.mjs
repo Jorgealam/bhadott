@@ -31,6 +31,10 @@ const thumb = (c) => c.capa
   ? `<div class="project-thumb com-capa" style="--hue:${c.hue}"><img src="${c.capa}" alt="" loading="lazy" width="1600" height="900" /></div>`
   : `<div class="project-thumb" style="--hue:${c.hue}"><svg class="ico ico-xl"><use href="/assets/icons.svg#${c.icone}"/></svg></div>`;
 
+// Área de cada serviço/projeto: muda só a cor de destaque (css/tema-bhadott.css)
+const AREA_SERVICO = { jogos: "jogos", aplicativos: "apps", sistemas: "sistemas", "ia-automacao": "ia", "sites-portais": "sites", "audiovisual-3d": "audiovisual" };
+const AREA_CASE = { jogos: "jogos", app: "apps", software: "sistemas", ia: "ia" };
+
 // Capas das páginas geradas (assets/arte/*.jpg)
 const ARTE_CATEGORIA = { "Jogos": "jogos", "Inteligência Artificial": "aura", "Aplicativos": "apps", "Novidades": "universo" };
 const capaPost = (p) => `/assets/arte/${ARTE_CATEGORIA[p.categoria] || "universo"}.jpg`;
@@ -118,13 +122,13 @@ for (const c of data.cases) {
     capa_url: c.capa || "/assets/arte/studio.jpg",
     ...c, tags_html: tags(c.tags), status_html: statusBadge(c.status),
     destaques: c.destaques.map((d) => `<li>${esc(d)}</li>`).join(""), stack: c.stack.map((s) => `<span class="tech">${esc(s)}</span>`).join(""),
-  }), { title: `${c.nome} | Portfólio BHADOTT Studio`, description: c.resumo, section: "studio" });
+  }), { title: `${c.nome} | Portfólio BHADOTT Studio`, description: c.resumo, section: "studio", area: AREA_CASE[c.filtro.split(" ")[0]] });
 }
 for (const s of data.servicos) {
   addPage(`studio/servicos/${s.slug}.html`, render(tpl("servico"), {
     capa_url: s.capa,
     ...s, entregas: s.entregas.map((e) => `<li>${esc(e)}</li>`).join(""), beneficios: s.beneficios.map((b) => `<div class="card reveal"><h3>${esc(b[0])}</h3><p>${esc(b[1])}</p></div>`).join(""),
-  }), { title: `${s.nome} | BHADOTT Studio`, description: s.resumo, section: "studio" });
+  }), { title: `${s.nome} | BHADOTT Studio`, description: s.resumo, section: "studio", area: AREA_SERVICO[s.slug] });
 }
 
 // ---------- Saída ----------
@@ -139,6 +143,7 @@ for (const pg of pages) {
     canonical: SITE_URL + url,
     og_type: pg.meta.type || "website",
     section: pg.meta.section || "portal",
+    area: pg.meta.area || "",
     robots: pg.meta.noindex ? "noindex" : "index, follow",
     scripts: (pg.meta.scripts || []).map((s) => `<script src="${s}?v=${version}" defer></script>`).join("\n  "),
     version,
