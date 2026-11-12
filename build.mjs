@@ -36,7 +36,7 @@ const AREA_SERVICO = { jogos: "jogos", aplicativos: "apps", sistemas: "sistemas"
 const AREA_CASE = { jogos: "jogos", app: "apps", software: "sistemas", ia: "ia" };
 
 // Capas das páginas geradas (assets/arte/*.jpg)
-const ARTE_CATEGORIA = { "Jogos": "jogos", "Inteligência Artificial": "aura", "Aplicativos": "apps", "Novidades": "universo" };
+const ARTE_CATEGORIA = { "Jogos": "jogos", "Inteligência Artificial": "dott", "Aplicativos": "apps", "Novidades": "universo" };
 const capaPost = (p) => `/assets/arte/${ARTE_CATEGORIA[p.categoria] || "universo"}.jpg`;
 const capaMidia = (src, extra = "") => `<span class="midia-capa"><img src="${src}" alt="" loading="lazy" width="1600" height="900" />${extra}</span>`;
 

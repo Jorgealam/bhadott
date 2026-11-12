@@ -106,7 +106,7 @@
     "beneficios": [
       [
         "Sem dependência",
-        "Orquestração de vários provedores, como na AURA: se um falha, outro assume."
+        "Orquestração de vários provedores, como no Dott: se um falha, outro assume."
       ],
       [
         "Privacidade",
@@ -117,7 +117,7 @@
         "Automação começa pelos processos que mais tomam tempo."
       ]
     ],
-    "capa": "/assets/arte/aura.jpg"
+    "capa": "/assets/arte/dott.jpg"
   },
   {
     "slug": "sites-portais",

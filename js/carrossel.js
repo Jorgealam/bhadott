@@ -52,8 +52,8 @@
     x0 = null;
   });
 
-  // botão "Falar com ela" abre a AURA
-  raiz.querySelectorAll("[data-abrir-aura]").forEach((b) => b.addEventListener("click", () => document.querySelector(".fab-chat")?.click()));
+  // botão "Falar com ele" abre o Dott
+  raiz.querySelectorAll("[data-abrir-dott]").forEach((b) => b.addEventListener("click", () => document.querySelector(".fab-chat")?.click()));
 
   ir(0);
   reiniciar();

@@ -1,5 +1,5 @@
 // ============================================================
-// Assistente AURA — a inteligência artificial da BHADOTT Studio.
+// Assistente Dott — a inteligência artificial da BHADOTT Studio.
 // Cada mensagem acende uma estrela no céu do chat e a liga às anteriores,
 // formando a constelação da conversa.
 // Sem CHAT_API configurado, responde com a base local abaixo.
@@ -18,7 +18,7 @@
   // ---------- Base de conhecimento local ----------
   const KB = [
     { k: ["oi", "ola", "olá", "bom dia", "boa tarde", "boa noite", "hey", "hello"],
-      r: "Olá! 👋 Eu sou a AURA, a IA da BHADOTT Studio. Posso te mostrar nossos serviços, projetos, preços ou te levar ao orçamento. Por onde começamos?" },
+      r: "Olá! 👋 Eu sou o Dott, a IA da BHADOTT Studio. Posso te mostrar nossos serviços, projetos, preços ou te levar ao orçamento. Por onde começamos?" },
     { k: ["preço", "preco", "quanto custa", "valor", "orçamento", "orcamento", "custo"],
       r: "Cada projeto tem um escopo, mas você pode ver uma estimativa na hora no <a href=\"/studio/orcamento.html\">orçamento interativo</a>. Para produtos prontos, as licenças começam em R$ 59/mês." },
     { k: ["prazo", "demora", "tempo", "quando fica"],
@@ -33,8 +33,8 @@
       r: "Criamos apps para Android, iOS e desktop — inclusive apps que funcionam sem internet. Saiba mais em <a href=\"/studio/servicos/aplicativos.html\">Aplicativos</a>." },
     { k: ["sistema", "saas", "gestão", "gestao", "erp"],
       r: "Desenvolvemos sistemas de gestão e plataformas SaaS sob medida. Um exemplo é o <a href=\"/studio/cases/bhadott-agro.html\">BHADOTT Agro</a>." },
-    { k: ["ia", "inteligência", "inteligencia", "chatbot", "automação", "automacao", "aura", "gpt", "claude", "gemini"],
-      r: "IA é com a gente — inclusive eu! ✨ Sou a <a href=\"/studio/cases/aura.html\">AURA</a>: minha versão completa, no computador, conversa por voz, gera imagens e tem um núcleo holográfico. Veja também o serviço de <a href=\"/studio/servicos/ia-automacao.html\">IA e automação</a>." },
+    { k: ["ia", "inteligência", "inteligencia", "chatbot", "automação", "automacao", "dott", "aura", "gpt", "claude", "gemini"],
+      r: "IA é com a gente — inclusive eu! ✨ Sou o <a href=\"/studio/cases/dott.html\">Dott</a>: minha versão completa, no computador, conversa por voz, gera imagens e tem um núcleo holográfico. Veja também o serviço de <a href=\"/studio/servicos/ia-automacao.html\">IA e automação</a>." },
     { k: ["site", "portal", "landing", "seo"],
       r: "Fazemos sites e portais rápidos e otimizados para o Google — como este que você está vendo. Veja <a href=\"/studio/servicos/sites-portais.html\">Sites e Portais</a>." },
     { k: ["agro", "fazenda", "rural", "rebanho"],
@@ -151,7 +151,7 @@
     if (open) {
       const r = panel.getBoundingClientRect();
       sky.width = r.width; sky.height = r.height;
-      if (!log.children.length) { bubble("Olá! Eu sou a <strong>AURA</strong> ✨, a inteligência artificial da BHADOTT Studio. Como posso ajudar?", "bot"); renderChips(); }
+      if (!log.children.length) { bubble("Olá! Eu sou o <strong>Dott</strong> ✨, a inteligência artificial da BHADOTT Studio. Como posso ajudar?", "bot"); renderChips(); }
       requestAnimationFrame(drawSky);
       input.focus();
     } else fab.focus();

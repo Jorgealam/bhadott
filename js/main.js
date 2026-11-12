@@ -258,7 +258,7 @@ if (CFG.TURNSTILE_SITEKEY && $(".turnstile")) {
 
 const SUCCESS = {
   newsletter: "Inscrição confirmada! Fique de olho no seu e-mail.",
-  aura: "Pronto! Você está na lista da AURA. Avisamos quando abrir para testes.",
+  dott: "Pronto! Você está na lista do Dott. Avisamos quando abrir para testes.",
   ebook: "Pronto! Seu guia está liberado:",
   recurso: "Pronto! Seu material está liberado:",
   carreira: "Candidatura recebida! Respondemos todos os envios.",
@@ -267,7 +267,7 @@ const SUCCESS = {
 // Assunto do e-mail que chega para a BHADOTT e resposta automática para quem enviou
 const SUBJECT = {
   newsletter: "Nova inscrição na newsletter",
-  aura: "Lista de espera da AURA",
+  dott: "Lista de espera do Dott",
   ebook: "Material baixado (pop-up)",
   recurso: "Material baixado",
   carreira: "Nova candidatura / colaboração",
@@ -275,7 +275,7 @@ const SUBJECT = {
 };
 const AUTORESPONSE = {
   carreira: "Olá! Recebemos sua candidatura para colaborar com a BHADOTT. Todos os envios recebem resposta. Obrigado pelo interesse! — BHADOTT Studio",
-  aura: "Oi! Aqui é a AURA. Você está na lista de espera e será um dos primeiros a me testar. — BHADOTT Studio",
+  dott: "Oi! Aqui é o Dott. Você está na lista de espera e será um dos primeiros a me testar. — BHADOTT Studio",
   contato: "Olá! Recebemos sua mensagem e respondemos em até 1 dia útil. Se for urgente, chame no WhatsApp pelo site. — BHADOTT Studio",
   newsletter: "Inscrição confirmada! Você vai receber as novidades do universo BHADOTT. — BHADOTT Studio",
 };
@@ -412,8 +412,8 @@ if ("serviceWorker" in navigator && (location.protocol === "https:" || location.
   addEventListener("load", () => navigator.serviceWorker.register("/sw.js").catch(() => {}));
 }
 
-// ---------- Botões "Falar com a AURA" em qualquer página ----------
-$$("[data-abrir-aura]").forEach((b) => { if (!b.closest(".hero-carrossel")) b.addEventListener("click", () => $(".fab-chat")?.click()); });
+// ---------- Botões "Falar com o Dott" em qualquer página ----------
+$$("[data-abrir-dott]").forEach((b) => { if (!b.closest(".hero-carrossel")) b.addEventListener("click", () => $(".fab-chat")?.click()); });
 
 // ---------- Foguete "voltar ao topo" ----------
 const topo = document.createElement("button");

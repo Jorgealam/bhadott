@@ -1,7 +1,7 @@
 [
   {
-    "slug": "aura",
-    "nome": "AURA",
+    "slug": "dott",
+    "nome": "Dott",
     "icone": "brain",
     "hue": 200,
     "destaque": true,
@@ -13,7 +13,7 @@
     ],
     "resumo": "Assistente pessoal com IA (texto, imagem e voz ao vivo), núcleo holográfico e ferramentas para usar o computador.",
     "desafio": "Ter um assistente de verdade no computador, que converse por voz, gere imagens e execute tarefas, sem ficar refém de um único provedor de IA nem parar quando uma cota acaba.",
-    "solucao": "Aplicativo desktop em Electron com núcleo holográfico animado e orquestração de vários provedores (Gemini, Groq e Cloudflare Workers AI). Você define a ordem de uso e a AURA troca de provedor sozinha em caso de falta de cota, falha técnica ou chave recusada.",
+    "solucao": "Aplicativo desktop em Electron com núcleo holográfico animado e orquestração de vários provedores (Gemini, Groq e Cloudflare Workers AI). Você define a ordem de uso e o Dott troca de provedor sozinho em caso de falta de cota, falha técnica ou chave recusada.",
     "destaques": [
       "Conversa por texto e voz ao vivo",
       "Geração de imagens",
@@ -27,7 +27,7 @@
       "Groq",
       "Cloudflare Workers AI"
     ],
-    "capa": "/assets/arte/aura.jpg"
+    "capa": "/assets/arte/dott.jpg"
   },
   {
     "slug": "bhadott-agro",

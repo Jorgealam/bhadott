@@ -7,7 +7,7 @@
       "<h2>O Sol e os planetas</h2>",
       "<p>A BHADOTT é o Sol: a marca-mãe. Cada divisão e serviço é um planeta em órbita. A primeira divisão, o <a href=\"/studio/\">BHADOTT Studio</a>, reúne o desenvolvimento de jogos, apps e sistemas.</p>",
       "<h2>O que há de novo</h2>",
-      "<ul><li>A <strong>AURA</strong>, nossa inteligência artificial, para tirar dúvidas</li><li>Orçamento interativo</li><li>Blog com devlogs dos projetos</li><li>Site em português, inglês e espanhol</li></ul>",
+      "<ul><li>O <strong>Dott</strong>, nossa inteligência artificial, para tirar dúvidas</li><li>Orçamento interativo</li><li>Blog com devlogs dos projetos</li><li>Site em português, inglês e espanhol</li></ul>",
       "<p>Explore, clique nos planetas e conte para a gente o que achou.</p>"
     ]
   },
@@ -24,12 +24,12 @@
     ]
   },
   {
-    "slug": "aura-varios-provedores-de-ia", "titulo": "AURA: por que usar vários provedores de IA ao mesmo tempo", "categoria": "Inteligência Artificial", "data": "2026-10-08", "leitura": 5,
-    "resumo": "Cotas acabam, APIs caem. Veja como a AURA troca de provedor sozinha para nunca parar de responder.",
+    "slug": "dott-varios-provedores-de-ia", "titulo": "Dott: por que usar vários provedores de IA ao mesmo tempo", "categoria": "Inteligência Artificial", "data": "2026-10-08", "leitura": 5,
+    "resumo": "Cotas acabam, APIs caem. Veja como o Dott troca de provedor sozinho para nunca parar de responder.",
     "conteudo": [
       "<p>Depender de um único provedor de IA é arriscado: limites de uso, instabilidade e mudanças de preço acontecem.</p>",
       "<h2>Ordem de uso definida por você</h2>",
-      "<p>Na AURA você define a ordem dos provedores para texto e para imagem. Ela só passa para o próximo por falta de cota, falha técnica, indisponibilidade ou chave recusada.</p>",
+      "<p>No Dott você define a ordem dos provedores para texto e para imagem. Ele só passa para o próximo por falta de cota, falha técnica, indisponibilidade ou chave recusada.</p>",
       "<h2>O mesmo princípio para clientes</h2>",
       "<p>Usamos essa arquitetura em projetos de <a href=\"/studio/servicos/ia-automacao.html\">IA e automação</a>: o assistente continua funcionando mesmo quando um serviço externo falha.</p>"
     ]
