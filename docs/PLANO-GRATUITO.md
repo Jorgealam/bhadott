@@ -6,13 +6,13 @@ Atualizado em 22/10/2026. Leia com calma; cada item diz **o que é**, **por que 
 
 | O quê | Como funciona |
 |---|---|
-| **Formulários enviando de verdade** | Contato, orçamento, carreira, newsletter e materiais chegam no **bhaddottudio@gmail.com** pelo FormSubmit (grátis, sem cadastro). Quem envia recebe uma resposta automática. |
+| **Formulários enviando de verdade** | Contato, orçamento, carreira, newsletter e materiais chegam no **bhadottstudio@gmail.com** pelo FormSubmit (grátis, sem cadastro). Quem envia recebe uma resposta automática. |
 | **4 materiais gratuitos em PDF** | Guia de Transformação Digital, Checklist antes de contratar um app, Kit de Game Design e Guia de IA. O visitante deixa nome e e-mail e baixa na hora — e você recebe o contato. |
 | **Imagem de compartilhamento** | Quando alguém manda o link do site no WhatsApp, Facebook ou LinkedIn, aparece a imagem do sistema solar com a marca. |
 | **WhatsApp e e-mail** | Botão verde em todas as páginas e no Dott. |
 
 ### ⚠️ Uma ação sua, uma vez só: ativar os formulários
-Na **primeira** mensagem enviada por qualquer formulário, o FormSubmit manda um e-mail para **bhaddottudio@gmail.com** com o botão **"Activate Form"**.
+Na **primeira** mensagem enviada por qualquer formulário, o FormSubmit manda um e-mail para **bhadottstudio@gmail.com** com o botão **"Activate Form"**.
 1. Entre no site e envie uma mensagem de teste pela página de **Contato**.
 2. Abra o Gmail (olhe também em **Spam** e **Promoções**).
 3. Clique em **Activate Form**. Pronto: daí em diante tudo chega sozinho.

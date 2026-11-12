@@ -37,7 +37,7 @@
 
 - O assistente agora é a **AURA, a inteligência artificial da BHADOTT Studio** (nome, avatar holográfico, apresentação e respostas). A constelação da conversa continua.
 - **WhatsApp** (91) 99154-9535 ligado no botão flutuante, no contato e na AURA.
-- **E-mail** bhaddottudio@gmail.com exibido na página de contato.
+- **E-mail** bhadottstudio@gmail.com exibido na página de contato.
 
 ## Pendências (não são erros do código)
 
@@ -50,7 +50,7 @@
 
 ## Atualização — mesma data
 
-- **Formulários reais:** passaram a enviar para bhaddottudio@gmail.com via FormSubmit (grátis). Falta só clicar em "Activate Form" no primeiro e-mail.
+- **Formulários reais:** passaram a enviar para bhadottstudio@gmail.com via FormSubmit (grátis). Falta só clicar em "Activate Form" no primeiro e-mail.
 - **Materiais gratuitos:** os 4 PDFs foram criados e são liberados para download após o cadastro.
 - **Imagem de compartilhamento** criada (`assets/og-image.png`).
 - **Erro corrigido:** imagem de compartilhamento, logo para o Google e `robots.txt` apontavam para o domínio `www.bhadott.studio`, que ainda não existe. Agora usam o endereço real do site.

@@ -9,7 +9,7 @@ window.BHADOTT_CONFIG = {
 
   // Envio de formulários (Formspree, Netlify Forms, Getform ou API própria)
   // Envio grátis via FormSubmit (sem conta). Na 1ª mensagem chega um e-mail de ativação: clique em "Activate Form".
-  FORM_ENDPOINT: "https://formsubmit.co/ajax/bhaddottudio@gmail.com",
+  FORM_ENDPOINT: "https://formsubmit.co/ajax/bhadottstudio@gmail.com",
 
   // CRM: webhook que recebe uma cópia de cada lead (HubSpot, RD Station, Make, n8n...)
   CRM_WEBHOOK: "",
@@ -19,7 +19,7 @@ window.BHADOTT_CONFIG = {
 
   // Contatos
   WHATSAPP: "5591991549435",      // só números com DDI e DDD, ex.: "5591999999999"
-  EMAIL: "bhaddottudio@gmail.com", // e-mail de contato exibido no site
+  EMAIL: "bhadottstudio@gmail.com", // e-mail de contato exibido no site
   CALENDLY_URL: "",                // ex.: "https://calendly.com/bhadott/30min"
 
   // Assistente Dott: endpoint opcional de IA (ex.: Cloudflare Worker que chama a Claude API).
