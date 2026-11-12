@@ -113,8 +113,13 @@ walk("src/pages");
 
 // Páginas geradas por modelo
 const tpl = (n) => read(`src/templates/${n}.html`);
+// "Leia também": primeiro da mesma categoria, depois os mais recentes
+const relacionados = (p) => [...data.posts.filter((o) => o !== p && o.categoria === p.categoria), ...data.posts.filter((o) => o !== p && o.categoria !== p.categoria)]
+  .slice(0, 3).map((o) => `
+          <a class="card midia post" href="/blog/${o.slug}.html">${capaMidia(capaPost(o), `<span class="status">${esc(o.categoria)}</span>`)}
+            <span class="midia-corpo"><h3>${esc(o.titulo)}</h3><span class="post-meta">${o.leitura} min de leitura</span></span></a>`).join("");
 for (const p of data.posts) {
-  addPage(`blog/${p.slug}.html`, render(tpl("post"), { ...p, capa_url: capaPost(p), data_fmt: fmtDate(p.data), conteudo: p.conteudo.join("\n") }),
+  addPage(`blog/${p.slug}.html`, render(tpl("post"), { ...p, capa_url: capaPost(p), data_fmt: fmtDate(p.data), conteudo: p.conteudo.join("\n"), relacionados: relacionados(p) }),
     { title: `${p.titulo} | Blog BHADOTT`, description: p.resumo, type: "article", section: "portal" });
 }
 for (const c of data.cases) {
@@ -181,6 +186,16 @@ fs.writeFileSync(path.join(OUT, "sitemap.xml"),
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
   urls.map((u) => `  <url><loc>${SITE_URL}${u}</loc><lastmod>${new Date().toISOString().slice(0, 10)}</lastmod></url>`).join("\n") +
   `\n</urlset>\n`);
+
+// Feed RSS do blog (leitores de notícias e automações)
+const xml = (s) => esc(s).replace(/'/g, "&apos;");
+fs.writeFileSync(path.join(OUT, "feed.xml"),
+  `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel>\n` +
+  `  <title>Blog BHADOTT</title><link>${SITE_URL}/blog.html</link><language>pt-BR</language>\n` +
+  `  <description>Devlogs, bastidores dos projetos e novidades do universo BHADOTT.</description>\n` +
+  data.posts.map((p) => `  <item><title>${xml(p.titulo)}</title><link>${SITE_URL}/blog/${p.slug}.html</link><guid>${SITE_URL}/blog/${p.slug}.html</guid>` +
+    `<pubDate>${new Date(p.data + "T12:00:00Z").toUTCString()}</pubDate><category>${xml(p.categoria)}</category><description>${xml(p.resumo)}</description></item>`).join("\n") +
+  `\n</channel></rss>\n`);
 
 if (!DEV) {
   const run = (cmd) => execSync(cmd, { stdio: "inherit" });

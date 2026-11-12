@@ -258,6 +258,7 @@ if (CFG.TURNSTILE_SITEKEY && $(".turnstile")) {
 
 const SUCCESS = {
   newsletter: "Inscrição confirmada! Fique de olho no seu e-mail.",
+  aura: "Pronto! Você está na lista da AURA. Avisamos quando abrir para testes.",
   ebook: "Pronto! Seu guia está liberado:",
   recurso: "Pronto! Seu material está liberado:",
   carreira: "Candidatura recebida! Respondemos todos os envios.",
@@ -266,6 +267,7 @@ const SUCCESS = {
 // Assunto do e-mail que chega para a BHADOTT e resposta automática para quem enviou
 const SUBJECT = {
   newsletter: "Nova inscrição na newsletter",
+  aura: "Lista de espera da AURA",
   ebook: "Material baixado (pop-up)",
   recurso: "Material baixado",
   carreira: "Nova candidatura / colaboração",
@@ -273,6 +275,7 @@ const SUBJECT = {
 };
 const AUTORESPONSE = {
   carreira: "Olá! Recebemos sua candidatura para colaborar com a BHADOTT. Todos os envios recebem resposta. Obrigado pelo interesse! — BHADOTT Studio",
+  aura: "Oi! Aqui é a AURA. Você está na lista de espera e será um dos primeiros a me testar. — BHADOTT Studio",
   contato: "Olá! Recebemos sua mensagem e respondemos em até 1 dia útil. Se for urgente, chame no WhatsApp pelo site. — BHADOTT Studio",
   newsletter: "Inscrição confirmada! Você vai receber as novidades do universo BHADOTT. — BHADOTT Studio",
 };
@@ -408,4 +411,24 @@ if (trail && finePointer && !still) {
 if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {
   addEventListener("load", () => navigator.serviceWorker.register("/sw.js").catch(() => {}));
 }
+
+// ---------- Botões "Falar com a AURA" em qualquer página ----------
+$$("[data-abrir-aura]").forEach((b) => { if (!b.closest(".hero-carrossel")) b.addEventListener("click", () => $(".fab-chat")?.click()); });
+
+// ---------- Foguete "voltar ao topo" ----------
+const topo = document.createElement("button");
+topo.className = "voltar-topo";
+topo.setAttribute("aria-label", "Voltar ao topo");
+topo.innerHTML = '<svg class="ico"><use href="/assets/icons.svg#rocket"/></svg>';
+topo.addEventListener("click", () => { topo.classList.add("decolando"); scrollTo({ top: 0, behavior: still ? "auto" : "smooth" }); setTimeout(() => topo.classList.remove("decolando"), 900); });
+document.body.appendChild(topo);
+
+// ---------- Barra de progresso de leitura (posts) ----------
+const barra = $(".progresso-leitura span");
+const rolar = () => {
+  topo.classList.toggle("visivel", scrollY > 900);
+  if (barra) { const max = document.documentElement.scrollHeight - innerHeight; barra.style.width = (max > 0 ? Math.min(100, (scrollY / max) * 100) : 0) + "%"; }
+};
+addEventListener("scroll", rolar, { passive: true });
+rolar();
 })();

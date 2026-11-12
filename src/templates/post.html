@@ -1,3 +1,4 @@
+    <div class="progresso-leitura" aria-hidden="true"><span></span></div>
     <article class="article">
       <header class="page-hero com-capa" style="--img:url('{{capa_url}}')">
         <div class="container narrow">
@@ -16,8 +17,15 @@
           <a href="#" data-share="whatsapp">WhatsApp</a>
           <button class="linklike" data-share="copy">Copiar link</button>
         </div>
-        <p><a href="/blog.html">← Voltar para o blog</a></p>
       </div>
+      <section class="section tight">
+        <div class="container">
+          <span class="eyebrow">Continue no universo</span>
+          <h2 class="section-title">Leia também</h2>
+          <div class="grid grid-3">{{relacionados}}</div>
+          <p class="more-link"><a href="/blog.html">← Todos os artigos</a> · <a href="/feed.xml">Assinar o feed RSS</a></p>
+        </div>
+      </section>
     </article>
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"BlogPosting","headline":"{{titulo}}","datePublished":"{{data}}","author":{"@type":"Person","name":"Jorge Alam"},"publisher":{"@type":"Organization","name":"BHADOTT Studio"},"description":"{{resumo}}"}

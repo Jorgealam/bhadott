@@ -1,10 +1,19 @@
-<!--{"title":"Página não encontrada | BHADOTT","description":"Esta página saiu de órbita.","section":"portal","noindex":true}-->
+<!--{"title":"Página não encontrada | BHADOTT","description":"Esta página saiu de órbita. Enquanto isso, que tal caçar algumas estrelas?","section":"portal","noindex":true,"scripts":["/js/jogo404.js"]}-->
     <section class="page-hero lost">
       <div class="container">
-        <img src="/assets/aura.svg" alt="AURA, a inteligência artificial da BHADOTT, flutuando no espaço" width="160" height="160" class="float" />
         <span class="eyebrow">Erro 404</span>
         <h1>Perdido no <span class="sun-text">espaço</span></h1>
-        <p>A página que você procura saiu de órbita. A AURA pode te ajudar a voltar — é só chamar no canto da tela.</p>
-        <div class="hero-actions center"><a href="/" class="btn btn-primary magnetic">Voltar ao início</a><a href="/blog.html" class="btn btn-ghost">Ir ao blog</a></div>
+        <p>A página que você procura saiu de órbita. Enquanto a AURA recalcula a rota, que tal caçar algumas estrelas?</p>
+        <div class="jogo404 card">
+          <div class="jogo404-placar" aria-live="polite">
+            <span>⭐ <b id="j-pontos">0</b></span>
+            <span>⏱ <b id="j-tempo">20</b>s</span>
+            <span>🏆 Recorde: <b id="j-recorde">0</b></span>
+          </div>
+          <canvas id="j-tela" width="720" height="360" aria-label="Minijogo: clique ou toque nas estrelas antes que elas caiam"></canvas>
+          <button class="btn btn-primary" id="j-iniciar">Jogar</button>
+          <p class="note">Clique ou toque nas estrelas. As douradas valem 3 pontos. Cuidado: o meteoro vermelho tira 2.</p>
+        </div>
+        <div class="hero-actions center"><a href="/" class="btn btn-ghost magnetic">Voltar ao início</a><a href="/games/" class="btn btn-ghost">Ir para os jogos</a></div>
       </div>
     </section>
